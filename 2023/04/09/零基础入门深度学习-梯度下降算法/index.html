@@ -6,12 +6,12 @@
   
   <title>零基础入门深度学习 - 梯度下降算法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="零基础入门深度学习 - 梯度下降算法0x1 这是要干啥？？？🐕🐕🐕目的：我想让误差函数的值变小，咋办？ E是可导函数。 求导！找极小值！然后再看端点！ 0x2 画画重点梯度下降算法   简单说：  计算机不会求极值，but可导函数的极值有个特点：导数为0。 所以让计算机遍历函数，find极小值    涉及的几个关键词：  &#x3D;&#x3D;梯度下降算法的公式&#x3D;&#x3D;：">
+  <meta name="description" content="0x1 这是要干啥？？？🐕🐕🐕目的：我想让误差函数的值变小，咋办？ E是可导函数。 求导！找极小值！然后再看端点！ 0x2 画画重点梯度下降算法   简单说：  计算机不会求极值，but可导函数的极值有个特点：导数为0。 所以让计算机遍历函数，find极小值    涉及的几个关键词：  &#x3D;&#x3D;梯度下降算法的公式&#x3D;&#x3D;： (式1) 那么，我要想求E(w)的极">
 <meta property="og:type" content="article">
 <meta property="og:title" content="零基础入门深度学习 - 梯度下降算法">
 <meta property="og:url" content="http://example.com/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="零基础入门深度学习 - 梯度下降算法0x1 这是要干啥？？？🐕🐕🐕目的：我想让误差函数的值变小，咋办？ E是可导函数。 求导！找极小值！然后再看端点！ 0x2 画画重点梯度下降算法   简单说：  计算机不会求极值，but可导函数的极值有个特点：导数为0。 所以让计算机遍历函数，find极小值    涉及的几个关键词：  &#x3D;&#x3D;梯度下降算法的公式&#x3D;&#x3D;：">
+<meta property="og:description" content="0x1 这是要干啥？？？🐕🐕🐕目的：我想让误差函数的值变小，咋办？ E是可导函数。 求导！找极小值！然后再看端点！ 0x2 画画重点梯度下降算法   简单说：  计算机不会求极值，but可导函数的极值有个特点：导数为0。 所以让计算机遍历函数，find极小值    涉及的几个关键词：  &#x3D;&#x3D;梯度下降算法的公式&#x3D;&#x3D;： (式1) 那么，我要想求E(w)的极">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409154853341.png">
 <meta property="og:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409155120140.png">
@@ -20,7 +20,7 @@
 <meta property="og:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409155519593.png">
 <meta property="og:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409155359570.png">
 <meta property="article:published_time" content="2023-04-09T07:29:31.000Z">
-<meta property="article:modified_time" content="2023-04-09T08:09:29.831Z">
+<meta property="article:modified_time" content="2023-04-09T09:20:18.779Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409154853341.png">
@@ -102,7 +102,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="零基础入门深度学习-梯度下降算法"><a href="#零基础入门深度学习-梯度下降算法" class="headerlink" title="零基础入门深度学习 - 梯度下降算法"></a>零基础入门深度学习 - 梯度下降算法</h1><h2 id="0x1-这是要干啥？？？🐕🐕🐕"><a href="#0x1-这是要干啥？？？🐕🐕🐕" class="headerlink" title="0x1 这是要干啥？？？🐕🐕🐕"></a>0x1 这是要干啥？？？🐕🐕🐕</h2><h3 id="目的：我想让误差函数的值变小，咋办？"><a href="#目的：我想让误差函数的值变小，咋办？" class="headerlink" title="目的：我想让误差函数的值变小，咋办？"></a>目的：我想让误差函数的值变小，咋办？</h3><p><img src="C:/Users/狒狒/AppData/Roaming/Typora/typora-user-images/image-20230409154853341.png" alt="image-20230409154853341"></p>
+        <h2 id="0x1-这是要干啥？？？🐕🐕🐕"><a href="#0x1-这是要干啥？？？🐕🐕🐕" class="headerlink" title="0x1 这是要干啥？？？🐕🐕🐕"></a>0x1 这是要干啥？？？🐕🐕🐕</h2><h3 id="目的：我想让误差函数的值变小，咋办？"><a href="#目的：我想让误差函数的值变小，咋办？" class="headerlink" title="目的：我想让误差函数的值变小，咋办？"></a>目的：我想让误差函数的值变小，咋办？</h3><p><img src="C:/Users/狒狒/AppData/Roaming/Typora/typora-user-images/image-20230409154853341.png" alt="image-20230409154853341"></p>
 <p>E是可导函数。</p>
 <p>求导！找极小值！然后再看端点！</p>
 <h2 id="0x2-画画重点"><a href="#0x2-画画重点" class="headerlink" title="0x2 画画重点"></a>0x2 画画重点</h2><h3 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h3><blockquote>
@@ -138,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/" data-id="clg96z0q30002wctv0nxo1ek8" data-title="零基础入门深度学习 - 梯度下降算法" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/" data-id="clg974fpn00022wtvbylmeq2w" data-title="零基础入门深度学习 - 梯度下降算法" class="article-share-link">Share</a>
       
       
       
@@ -197,7 +197,7 @@
           </li>
         
           <li>
-            <a href="/2023/04/08/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%84%9F%E7%9F%A5%E5%99%A8/">零基础入门深度学习</a>
+            <a href="/2023/04/08/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%84%9F%E7%9F%A5%E5%99%A8/">零基础入门深度学习-感知器</a>
           </li>
         
           <li>

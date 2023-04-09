@@ -6,12 +6,12 @@
   
   <title>零基础入门深度学习- 线性单元 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="零基础入门深度学习- 线性单元0x1这是要干啥？？？通过介绍另外一种『感知器』，也就是『线性单元』，来说明关于机器学习一些基本的概念，比如模型、目标函数、优化算法等等。这些概念对于所有的机器学习算法来说都是通用的，掌握了这些概念，就&#x3D;&#x3D;掌握了机器学习的基本套路&#x3D;&#x3D; 0x2 自己画画重点线性单元 啥是模型？当我们说模型时，我们实际上在谈论根据输入x 预测输出y">
+  <meta name="description" content="0x1这是要干啥？？？通过介绍另外一种『感知器』，也就是『线性单元』，来说明关于机器学习一些基本的概念，比如模型、目标函数、优化算法等等。这些概念对于所有的机器学习算法来说都是通用的，掌握了这些概念，就&#x3D;&#x3D;掌握了机器学习的基本套路&#x3D;&#x3D; 0x2 自己画画重点线性单元 啥是模型？当我们说模型时，我们实际上在谈论根据输入x 预测输出y 的&#x3D;&#x3D;算">
 <meta property="og:type" content="article">
 <meta property="og:title" content="零基础入门深度学习- 线性单元">
 <meta property="og:url" content="http://example.com/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="零基础入门深度学习- 线性单元0x1这是要干啥？？？通过介绍另外一种『感知器』，也就是『线性单元』，来说明关于机器学习一些基本的概念，比如模型、目标函数、优化算法等等。这些概念对于所有的机器学习算法来说都是通用的，掌握了这些概念，就&#x3D;&#x3D;掌握了机器学习的基本套路&#x3D;&#x3D; 0x2 自己画画重点线性单元 啥是模型？当我们说模型时，我们实际上在谈论根据输入x 预测输出y">
+<meta property="og:description" content="0x1这是要干啥？？？通过介绍另外一种『感知器』，也就是『线性单元』，来说明关于机器学习一些基本的概念，比如模型、目标函数、优化算法等等。这些概念对于所有的机器学习算法来说都是通用的，掌握了这些概念，就&#x3D;&#x3D;掌握了机器学习的基本套路&#x3D;&#x3D; 0x2 自己画画重点线性单元 啥是模型？当我们说模型时，我们实际上在谈论根据输入x 预测输出y 的&#x3D;&#x3D;算">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409145447181.png">
 <meta property="og:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409145745109.png">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409151616024.png">
 <meta property="og:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409151803612.png">
 <meta property="article:published_time" content="2023-04-09T06:45:12.000Z">
-<meta property="article:modified_time" content="2023-04-09T09:14:01.714Z">
+<meta property="article:modified_time" content="2023-04-09T09:20:20.338Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:/Users/%E7%8B%92%E7%8B%92/AppData/Roaming/Typora/typora-user-images/image-20230409145447181.png">
@@ -103,7 +103,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="零基础入门深度学习-线性单元"><a href="#零基础入门深度学习-线性单元" class="headerlink" title="零基础入门深度学习- 线性单元"></a>零基础入门深度学习- 线性单元</h1><h2 id="0x1这是要干啥？？？"><a href="#0x1这是要干啥？？？" class="headerlink" title="0x1这是要干啥？？？"></a>0x1这是要干啥？？？</h2><p>通过介绍另外一种『感知器』，也就是『线性单元』，来说明关于机器学习一些基本的概念，比如模型、目标函数、优化算法等等。这些概念对于所有的机器学习算法来说都是通用的，掌握了这些概念，就&#x3D;&#x3D;掌握了机器学习的基本套路&#x3D;&#x3D;</p>
+        <h2 id="0x1这是要干啥？？？"><a href="#0x1这是要干啥？？？" class="headerlink" title="0x1这是要干啥？？？"></a>0x1这是要干啥？？？</h2><p>通过介绍另外一种『感知器』，也就是『线性单元』，来说明关于机器学习一些基本的概念，比如模型、目标函数、优化算法等等。这些概念对于所有的机器学习算法来说都是通用的，掌握了这些概念，就&#x3D;&#x3D;掌握了机器学习的基本套路&#x3D;&#x3D;</p>
 <h2 id="0x2-自己画画重点"><a href="#0x2-自己画画重点" class="headerlink" title="0x2 自己画画重点"></a>0x2 自己画画重点</h2><h3 id="线性单元"><a href="#线性单元" class="headerlink" title="线性单元"></a>线性单元</h3><p><img src="C:/Users/狒狒/AppData/Roaming/Typora/typora-user-images/image-20230409145447181.png" alt="image-20230409145447181"></p>
 <h3 id="啥是模型？"><a href="#啥是模型？" class="headerlink" title="啥是模型？"></a>啥是模型？</h3><p>当我们说<strong>模型</strong>时，我们实际上在谈论根据输入x 预测输出y 的&#x3D;&#x3D;<strong>算法</strong>&#x3D;&#x3D;</p>
 <p>&#x3D;&#x3D;e.g:&#x3D;&#x3D;<img src="C:/Users/狒狒/AppData/Roaming/Typora/typora-user-images/image-20230409145745109.png" alt="image-20230409145745109"></p>
@@ -165,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/" data-id="clg96z0q40003wctvhrw9ha7m" data-title="零基础入门深度学习- 线性单元" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/" data-id="clg974fpp00032wtv9wmugzoy" data-title="零基础入门深度学习- 线性单元" class="article-share-link">Share</a>
       
       
       
@@ -187,7 +187,7 @@
   
     <a href="/2023/04/08/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%84%9F%E7%9F%A5%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">零基础入门深度学习</div>
+      <div class="article-nav-title">零基础入门深度学习-感知器</div>
     </a>
   
 </nav>
@@ -233,7 +233,7 @@
           </li>
         
           <li>
-            <a href="/2023/04/08/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%84%9F%E7%9F%A5%E5%99%A8/">零基础入门深度学习</a>
+            <a href="/2023/04/08/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%84%9F%E7%9F%A5%E5%99%A8/">零基础入门深度学习-感知器</a>
           </li>
         
           <li>
