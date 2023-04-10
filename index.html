@@ -179,8 +179,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-10 15:16:08" itemprop="dateModified" datetime="2023-04-10T15:16:08+08:00">2023-04-10</time>
+                <time title="修改时间：2023-04-11 07:39:38" itemprop="dateModified" datetime="2023-04-11T07:39:38+08:00">2023-04-11</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">零基础入门深度学习</span></a>
+                </span>
+            </span>
 
           
 
@@ -193,7 +202,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="0x1-它能干啥呢❓"><a href="#0x1-它能干啥呢❓" class="headerlink" title="0x1 它能干啥呢❓"></a>0x1 它能干啥呢❓</h2><p>手写数字识别？？！！</p>
+          <h2 id="0x0-前置知识学的有啥用？"><a href="#0x0-前置知识学的有啥用？" class="headerlink" title="0x0 前置知识学的有啥用？"></a>0x0 前置知识学的有啥用？</h2><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410195117236.png" alt="image-20230410195117236"></p>
+<h2 id="0x1-这节课学的东西，它能干啥呢❓"><a href="#0x1-这节课学的东西，它能干啥呢❓" class="headerlink" title="0x1 这节课学的东西，它能干啥呢❓"></a>0x1 这节课学的东西，它能干啥呢❓</h2><p>手写数字识别？？！！</p>
 <h2 id="0x2-怎么搞？？"><a href="#0x2-怎么搞？？" class="headerlink" title="0x2 怎么搞？？"></a>0x2 怎么搞？？</h2><p>前面学习的都是训练<mark>单个神经元</mark>，回顾一下，前面干了些什么：</p>
 <ul>
 <li>感知器模拟and运算</li>
@@ -231,7 +241,8 @@
 <h3 id="神经网络的训练"><a href="#神经网络的训练" class="headerlink" title="神经网络的训练"></a>神经网络的训练</h3><p>神经网络是一个<strong>模型</strong></p>
 <p>权值是模型的<strong>参数</strong></p>
 <p>一个神经网络的<strong>连接方式、网络的层数、每层的节点数</strong>这些参数，则不是学习出来的，而是人为事先设置的。对于这些人为设置的参数，我们称之为**超参数(Hyper-Parameters)**。</p>
-<h3 id="反向传播算法-通过结果看原因"><a href="#反向传播算法-通过结果看原因" class="headerlink" title="反向传播算法(通过结果看原因)"></a>反向传播算法(通过结果看原因)</h3><blockquote>
+<h3 id="反向传播算法-通过结果看原因"><a href="#反向传播算法-通过结果看原因" class="headerlink" title="反向传播算法(通过结果看原因)"></a>反向传播算法(通过结果看原因)</h3><p>⭐⭐⭐⭐<strong>一句话说</strong>：从后向前，利用误差项的计算和权重更新方法，计算出w<sub>ji</sub>更新所需要用到的δ</p>
+<blockquote>
 <p>   啥意思？为啥叫反向传播算法？</p>
 </blockquote>
 <p>举个有监督模型的例子：<strong>高中语文阅读理解题（特点：主观性强）</strong></p>
@@ -261,22 +272,47 @@
 <p>  用数学理解 反向传播算法（🐕🐕🐕）</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410080326438.png" alt="image-20230410080326438"></p>
+<p><strong>用矩阵来描述上面的这个神经网络：</strong></p>
+<p>令：</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410200957859.png" alt="image-20230410200957859"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410201019107.png" alt="image-20230410201019107"></p>
+<p>从而：</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410201102748.png" alt="image-20230410201102748"></p>
+<p>最终有：</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410201124073.png" alt="image-20230410201124073"></p>
+<p><strong>更新权值相关公式（这在5.2.1、5.2.2中有推导过程）：</strong></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410195407536.png" alt="image-20230410195407536"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410195428081.png" alt="image-20230410195428081"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410195503148.png" alt="image-20230410195503148"></p>
+<p>能用这个式子的理由：梯度下降法</p>
+<p><mark>这段话非常重要：</mark>显然，计算一个节点的误差项，需要先计算每个与其相连的下一层节点的误差项。这就要求误差项的计算顺序必须是从输出层开始，然后反向依次计算每个隐藏层的误差项，直到与输入层相连的那个隐藏层。这就是反向传播算法的名字的含义。当所有节点的误差项计算完毕后，我们就可以根据<strong>式5</strong>来更新所有的权重。</p>
+<p>看看，式子5当中的</p>
 <ul>
+<li><p><em>η</em>是学习速率</p>
+</li>
+<li><p><em>δ</em> <sub><em>j</em></sub>是节点j 的误差项（<mark>注意:</mark>误差项和误差不是一个东西）</p>
+</li>
+<li><p>x<sub>ji</sub>是节点i传递给节点j的输入</p>
+</li>
 <li><p>我的目的：让输出T与Y的误差变小</p>
 <ul>
-<li>误差怎么估计？ &#x3D;&gt; <img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410091217289.png" alt="image-20230410091217289"></li>
+<li><p>误差怎么估计？ &#x3D;&gt; <img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410091217289.png" alt="image-20230410091217289"></p>
+</li>
+<li><p>梯度下降法：出误差E <sub>d</sub>对于每个权重w<sub>ji</sub>的偏导数（也就是梯度）<img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410193604139.png" alt="image-20230410193604139" style="zoom: 67%;" />这就有回到了式(5)</p>
+</li>
+<li><p>计算出误差E <sub>d</sub>对于每个权重w<sub>ji</sub>的偏导数的目的：修改wji</p>
+</li>
+<li><p>修改w<sub>ji</sub>的目的：让误差变小</p>
+</li>
 </ul>
-</li>
-<li><p>怎么让误差变小？</p>
-</li>
-<li><p>梯度下降法：出误差E <sub>d</sub>对于每个权重w<sub>ji</sub>的偏导数（也就是梯度）</p>
 </li>
 </ul>
 <h2 id="0x4-python语法知识补充-🎈"><a href="#0x4-python语法知识补充-🎈" class="headerlink" title="0x4 python语法知识补充 🎈"></a>0x4 python语法知识补充 🎈</h2><h3 id="a-1-V-S-a-1-V-S-a-1"><a href="#a-1-V-S-a-1-V-S-a-1" class="headerlink" title="a[-1] V.S. a[:-1] V.S. a[::-1]"></a>a[-1] V.S. a[:-1] V.S. a[::-1]</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410144632783.png" alt="image-20230410144632783"></p>
-<h2 id="0x5-写写代码"><a href="#0x5-写写代码" class="headerlink" title="0x5 写写代码"></a>0x5 写写代码</h2><p>见仓库</p>
+<h2 id="0x5-写写代码、搞懂整体逻辑"><a href="#0x5-写写代码、搞懂整体逻辑" class="headerlink" title="0x5 写写代码、搞懂整体逻辑"></a>0x5 写写代码、搞懂整体逻辑</h2><p>教程给出的模型：</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410205911969.png" alt="image-20230410205911969"></p>
 <h2 id="0x6-如何保证自己的神经网络没有BUG"><a href="#0x6-如何保证自己的神经网络没有BUG" class="headerlink" title="0x6 如何保证自己的神经网络没有BUG?"></a>0x6 如何保证自己的神经网络没有BUG?</h2><p>核心：</p>
 <p>将神经网络代码算出来的梯度值和手算出来的梯度值进行比较，如果差别比较小，就说明代码是正确的。</p>
-<h2 id="0x-需要对这几天学习的知识进行一下总结"><a href="#0x-需要对这几天学习的知识进行一下总结" class="headerlink" title="0x 需要对这几天学习的知识进行一下总结"></a>0x 需要对这几天学习的知识进行一下总结</h2><p>#TODO</p>
+<h2 id="0x7-需要对这几天学习的知识进行一下总结"><a href="#0x7-需要对这几天学习的知识进行一下总结" class="headerlink" title="0x7 需要对这几天学习的知识进行一下总结"></a>0x7 需要对这几天学习的知识进行一下总结</h2><p>#TODO</p>
 
       
     </div>
@@ -327,8 +363,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-10 13:42:06" itemprop="dateModified" datetime="2023-04-10T13:42:06+08:00">2023-04-10</time>
+                <time title="修改时间：2023-04-11 07:39:41" itemprop="dateModified" datetime="2023-04-11T07:39:41+08:00">2023-04-11</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">零基础入门深度学习</span></a>
+                </span>
+            </span>
 
           
 
@@ -392,7 +437,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
+    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/headIcon.jpg">
@@ -406,7 +451,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/" class="post-title-link" itemprop="url">零基础入门深度学习- 线性单元</a>
+            <a href="/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83/" class="post-title-link" itemprop="url">零基础入门深度学习- 线性单元</a>
         </h2>
 
         <div class="post-meta">
@@ -423,8 +468,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-10 13:42:52" itemprop="dateModified" datetime="2023-04-10T13:42:52+08:00">2023-04-10</time>
+                <time title="修改时间：2023-04-11 07:39:45" itemprop="dateModified" datetime="2023-04-11T07:39:45+08:00">2023-04-11</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">零基础入门深度学习</span></a>
+                </span>
+            </span>
 
           
 
@@ -545,8 +599,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-10 19:13:59" itemprop="dateModified" datetime="2023-04-10T19:13:59+08:00">2023-04-10</time>
+                <time title="修改时间：2023-04-11 07:39:34" itemprop="dateModified" datetime="2023-04-11T07:39:34+08:00">2023-04-11</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">零基础入门深度学习</span></a>
+                </span>
+            </span>
 
           
 
@@ -811,6 +874,10 @@
           <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
       </div>
   </nav>
 </div>
