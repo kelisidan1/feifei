@@ -20,10 +20,12 @@
     var CONFIG = {"hostname":"luke-blog.netlify.app","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="我爱学习！~~~">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Luke-blog">
 <meta property="og:url" content="https://luke-blog.netlify.app/index.html">
 <meta property="og:site_name" content="Luke-blog">
+<meta property="og:description" content="我爱学习！~~~">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Luke">
 <meta name="twitter:card" content="summary">
@@ -95,6 +97,7 @@
       <h1 class="site-title">Luke-blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">Legends never die！</p>
   </div>
 
   <div class="site-nav-right">
@@ -148,9 +151,9 @@
     <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%92%8C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/headIcon.jpg">
       <meta itemprop="name" content="Luke">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="我爱学习！~~~">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -176,7 +179,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-10 13:41:36" itemprop="dateModified" datetime="2023-04-10T13:41:36+08:00">2023-04-10</time>
+                <time title="修改时间：2023-04-10 15:16:08" itemprop="dateModified" datetime="2023-04-10T15:16:08+08:00">2023-04-10</time>
               </span>
 
           
@@ -269,8 +272,11 @@
 <li><p>梯度下降法：出误差E <sub>d</sub>对于每个权重w<sub>ji</sub>的偏导数（也就是梯度）</p>
 </li>
 </ul>
-<h2 id="0x4-python语法知识补充-🎈"><a href="#0x4-python语法知识补充-🎈" class="headerlink" title="0x4 python语法知识补充 🎈"></a>0x4 python语法知识补充 🎈</h2><h3 id="a-1-V-S-a-1-V-S-a-1"><a href="#a-1-V-S-a-1-V-S-a-1" class="headerlink" title="a[-1] V.S. a[:-1] V.S. a[::-1]"></a>a[-1] V.S. a[:-1] V.S. a[::-1]</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410105506576.png" alt="image-20230410105506576"></p>
-<h2 id="0x5-需要对这几天学习的知识进行一下总结"><a href="#0x5-需要对这几天学习的知识进行一下总结" class="headerlink" title="0x5 需要对这几天学习的知识进行一下总结"></a>0x5 需要对这几天学习的知识进行一下总结</h2><p>#TODO</p>
+<h2 id="0x4-python语法知识补充-🎈"><a href="#0x4-python语法知识补充-🎈" class="headerlink" title="0x4 python语法知识补充 🎈"></a>0x4 python语法知识补充 🎈</h2><h3 id="a-1-V-S-a-1-V-S-a-1"><a href="#a-1-V-S-a-1-V-S-a-1" class="headerlink" title="a[-1] V.S. a[:-1] V.S. a[::-1]"></a>a[-1] V.S. a[:-1] V.S. a[::-1]</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230410144632783.png" alt="image-20230410144632783"></p>
+<h2 id="0x5-写写代码"><a href="#0x5-写写代码" class="headerlink" title="0x5 写写代码"></a>0x5 写写代码</h2><p>见仓库</p>
+<h2 id="0x6-如何保证自己的神经网络没有BUG"><a href="#0x6-如何保证自己的神经网络没有BUG" class="headerlink" title="0x6 如何保证自己的神经网络没有BUG?"></a>0x6 如何保证自己的神经网络没有BUG?</h2><p>核心：</p>
+<p>将神经网络代码算出来的梯度值和手算出来的梯度值进行比较，如果差别比较小，就说明代码是正确的。</p>
+<h2 id="0x-需要对这几天学习的知识进行一下总结"><a href="#0x-需要对这几天学习的知识进行一下总结" class="headerlink" title="0x 需要对这几天学习的知识进行一下总结"></a>0x 需要对这几天学习的知识进行一下总结</h2><p>#TODO</p>
 
       
     </div>
@@ -293,9 +299,9 @@
     <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/headIcon.jpg">
       <meta itemprop="name" content="Luke">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="我爱学习！~~~">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -389,9 +395,9 @@
     <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%92%8C%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/headIcon.jpg">
       <meta itemprop="name" content="Luke">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="我爱学习！~~~">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -511,9 +517,9 @@
     <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/08/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%84%9F%E7%9F%A5%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/headIcon.jpg">
       <meta itemprop="name" content="Luke">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="我爱学习！~~~">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -539,7 +545,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-10 13:41:04" itemprop="dateModified" datetime="2023-04-10T13:41:04+08:00">2023-04-10</time>
+                <time title="修改时间：2023-04-10 19:13:59" itemprop="dateModified" datetime="2023-04-10T19:13:59+08:00">2023-04-10</time>
               </span>
 
           
@@ -670,9 +676,9 @@
     <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/02/26/test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/headIcon.jpg">
       <meta itemprop="name" content="Luke">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="我爱学习！~~~">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -792,8 +798,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luke"
+      src="/images/headIcon.jpg">
   <p class="site-author-name" itemprop="name">Luke</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">我爱学习！~~~</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
