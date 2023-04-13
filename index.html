@@ -179,7 +179,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-12 20:19:26" itemprop="dateModified" datetime="2023-04-12T20:19:26+08:00">2023-04-12</time>
+                <time title="修改时间：2023-04-13 16:48:31" itemprop="dateModified" datetime="2023-04-13T16:48:31+08:00">2023-04-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -293,11 +293,46 @@
 <p>  卷积层 filter权重梯度的计算（有疑问）</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_2_1681299279585.png" alt="未命名文档(10)_2_1681299279585"></p>
+<p>理解：image经过多个filter会产生多个channel，如果做反向传播的话，生成的三个channel对原来的image的误差是有”叠加“效果的。</p>
 <blockquote>
 <p>  Pooling层的训练</p>
 </blockquote>
 <p>无论max pooling还是mean pooling，都没有需要学习的参数。因此，在卷积神经网络的训练中，Pooling层需要做的仅仅是将误差项传递到上一层，而没有梯度的计算。</p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_5_1681301675670.png" alt="未命名文档(10)_5_1681301675670"></p>
+<h2 id="0x-3-python小知识"><a href="#0x-3-python小知识" class="headerlink" title="0x 3 python小知识"></a>0x 3 python小知识</h2><h3 id="random函数的用法"><a href="#random函数的用法" class="headerlink" title="random函数的用法"></a>random函数的用法</h3><p>code：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">weights = np.random.uniform(-<span class="number">1e-4</span>,<span class="number">1e-4</span>,(<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">bias = <span class="number">0</span></span><br><span class="line">weight_grad = np.zeros(weights.shape)</span><br><span class="line"><span class="built_in">print</span>(weight_grad)</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[[[0. 0. 0.]</span><br><span class="line">  [0. 0. 0.]</span><br><span class="line">  [0. 0. 0.]]</span><br><span class="line"></span><br><span class="line"> [[0. 0. 0.]</span><br><span class="line">  [0. 0. 0.]</span><br><span class="line">  [0. 0. 0.]]]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="魔术方法-repr"><a href="#魔术方法-repr" class="headerlink" title="魔术方法 _repr_"></a>魔术方法 _<em>repr</em>_</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230413081441432.png" alt="image-20230413081441432"></p>
+<p>就是说，实例化一个类的时候，会有一个回显</p>
+<h3 id="np-nditer-函数"><a href="#np-nditer-函数" class="headerlink" title="np.nditer()函数"></a>np.nditer()函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">6</span>).reshape(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="comment"># np.arange(6) 得到：[0 1 2 3 4 5]</span></span><br><span class="line"><span class="comment"># 再reshape一下，得到：[[0 1 2] [3 4 5]]</span></span><br><span class="line"><span class="keyword">with</span> np.nditer(a,op_flags = [<span class="string">&#x27;readwrite&#x27;</span>]) <span class="keyword">as</span> it: <span class="comment">#np.nditer(arrar,op_flags)会生成一个迭代器，我们叫他it</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> it:    <span class="comment">#使用nditer迭代器进行循环，速度要比for-loop快很多倍</span></span><br><span class="line">        x[...] = <span class="number">2</span>*x <span class="comment">#x[...]是一种“扩展切片”（Ellipsis slicing）的写法，它表示对数组中所有元素进行操作。</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="在做padding的时候的代码解析："><a href="#在做padding的时候的代码解析：" class="headerlink" title="在做padding的时候的代码解析："></a>在做padding的时候的代码解析：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> input_array.ndim == <span class="number">3</span>:   <span class="comment">#ndim 是数组的维度</span></span><br><span class="line">    input_width = input_array.shape[<span class="number">2</span>]</span><br><span class="line">    input_height = input_array.shape[<span class="number">1</span>]</span><br><span class="line">    input_depth = input_array.shape[<span class="number">0</span>]</span><br><span class="line">    padded_array = np.zeros((</span><br><span class="line">        input_depth,</span><br><span class="line">        input_height + <span class="number">2</span>*zp,</span><br><span class="line">        input_width + <span class="number">2</span>*zp</span><br><span class="line">    ))</span><br><span class="line">    padded_array[:,</span><br><span class="line">        zp:zp + input_height,</span><br><span class="line">        zp:zp +input_width</span><br><span class="line">    ] = input_array</span><br><span class="line">    <span class="keyword">return</span> padded_array</span><br><span class="line"><span class="keyword">elif</span> input_array.ndim==<span class="number">2</span>:</span><br><span class="line">    input_width = input_array.shape[<span class="number">1</span>]</span><br><span class="line">    input_height = input_array.shpe[<span class="number">0</span>]</span><br><span class="line">    padded_array = np.zeros((</span><br><span class="line">        input_height + <span class="number">2</span>*zp,</span><br><span class="line">        input_width + <span class="number">2</span>*zp</span><br><span class="line">    ))</span><br><span class="line">    padded_array[</span><br><span class="line">        zp:zp+input_height+<span class="number">2</span>*zp,</span><br><span class="line">        zp:zp + input_width</span><br><span class="line">    ] = input_array</span><br><span class="line">    <span class="keyword">return</span> padded_array</span><br></pre></td></tr></table></figure>
+
+<p>核心考察点：numpy数组当中，冒号的使用</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230413093313261.png" alt="image-20230413093313261"></p>
+<p>简单说流程： 找到填充的位置，进行填充</p>
+<h3 id="使用numpy数组的时候，它完全就是一个向量-x2F-矩阵"><a href="#使用numpy数组的时候，它完全就是一个向量-x2F-矩阵" class="headerlink" title="使用numpy数组的时候，它完全就是一个向量&#x2F;矩阵"></a>使用numpy数组的时候，它完全就是一个向量&#x2F;矩阵</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230413111439816.png" alt="image-20230413111439816"></p>
+<p>可以去做向量减法、矩阵乘法等等操作。。。</p>
+<h3 id="numpy数组的shape属性"><a href="#numpy数组的shape属性" class="headerlink" title="numpy数组的shape属性"></a>numpy数组的shape属性</h3><p>二维：</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230413145942055.png" alt="image-20230413145942055"></p>
+<p>shape[0] ：有几行</p>
+<p>shape[1]：有几列</p>
+<p>三维：</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230413150004377.png" alt="image-20230413150004377"></p>
+<p>shape[0] ：有几层 （channel数）</p>
+<p>shape[1] ： 有几行</p>
+<p>shape[2] : 有几列 </p>
+<h2 id="0x-4-代码实现盘逻辑-amp-debug"><a href="#0x-4-代码实现盘逻辑-amp-debug" class="headerlink" title="0x 4 代码实现盘逻辑 &amp; debug"></a>0x 4 代码实现盘逻辑 &amp; debug</h2><p>以下为矢量图，可以下载下来放大看</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AE%9E%E7%8E%B0.svg" alt="卷积神经网络的实现"></p>
 
       
     </div>
@@ -348,7 +383,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-12 16:33:01" itemprop="dateModified" datetime="2023-04-12T16:33:01+08:00">2023-04-12</time>
+                <time title="修改时间：2023-04-12 20:36:41" itemprop="dateModified" datetime="2023-04-12T20:36:41+08:00">2023-04-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
