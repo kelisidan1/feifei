@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"luke-blog.netlify.app","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="0x 0 一种形象化的理解方式 一定要看这个：【循环神经网络】5分钟搞懂RNN，3D动画深入浅出_哔哩哔哩_bilibili 0x 1 RNN能干啥？ RNN可以为语言模型来建模  比如，当我们在理解一句话意思时，孤立的理解这句话的每个词是不够的，我们需要处理这些词连接起来的整个序列；当我们处理视频的时候，我们也不能只单独的去分析每一帧，而要分析这些帧连接起来的整个序列。这时，就需要用到深度学习领">
+  <meta name="description" content="0x 0 一种形象化的理解方式 一定要看这个：【循环神经网络】5分钟搞懂RNN，3D动画深入浅出_哔哩哔哩_bilibili 前置知识：矩阵对矩阵的求导、矩阵对向量的求导运算 0x 1 RNN能干啥？ RNN可以为语言模型来建模  比如，当我们在理解一句话意思时，孤立的理解这句话的每个词是不够的，我们需要处理这些词连接起来的整个序列；当我们处理视频的时候，我们也不能只单独的去分析每一帧，而要分析这">
 <meta property="og:type" content="article">
 <meta property="og:title" content="零基础入门深度学习-循环神经网络">
 <meta property="og:url" content="https://luke-blog.netlify.app/2023/04/13/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="Luke-blog">
-<meta property="og:description" content="0x 0 一种形象化的理解方式 一定要看这个：【循环神经网络】5分钟搞懂RNN，3D动画深入浅出_哔哩哔哩_bilibili 0x 1 RNN能干啥？ RNN可以为语言模型来建模  比如，当我们在理解一句话意思时，孤立的理解这句话的每个词是不够的，我们需要处理这些词连接起来的整个序列；当我们处理视频的时候，我们也不能只单独的去分析每一帧，而要分析这些帧连接起来的整个序列。这时，就需要用到深度学习领">
+<meta property="og:description" content="0x 0 一种形象化的理解方式 一定要看这个：【循环神经网络】5分钟搞懂RNN，3D动画深入浅出_哔哩哔哩_bilibili 前置知识：矩阵对矩阵的求导、矩阵对向量的求导运算 0x 1 RNN能干啥？ RNN可以为语言模型来建模  比如，当我们在理解一句话意思时，孤立的理解这句话的每个词是不够的，我们需要处理这些词连接起来的整个序列；当我们处理视频的时候，我们也不能只单独的去分析每一帧，而要分析这">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415091324304.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415083548108.png">
@@ -36,13 +36,13 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415140734980.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415111609154.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415111655359.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_7_1681543414953.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_7_1681561677242.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415111906498.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415154753640.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415154853403.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415155136887.png">
 <meta property="article:published_time" content="2023-04-13T08:59:46.000Z">
-<meta property="article:modified_time" content="2023-04-15T08:40:49.239Z">
+<meta property="article:modified_time" content="2023-04-15T12:33:22.387Z">
 <meta property="article:author" content="Luke">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415091324304.png">
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-15 16:40:49" itemprop="dateModified" datetime="2023-04-15T16:40:49+08:00">2023-04-15</time>
+                <time title="修改时间：2023-04-15 20:33:22" itemprop="dateModified" datetime="2023-04-15T20:33:22+08:00">2023-04-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,6 +221,7 @@
       
         <h2 id="0x-0-一种形象化的理解方式"><a href="#0x-0-一种形象化的理解方式" class="headerlink" title="0x 0 一种形象化的理解方式"></a>0x 0 一种形象化的理解方式</h2><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415091324304.png" alt="image-20230415091324304"></p>
 <p>一定要看这个：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1z5411f7Bm/?spm_id_from=333.337.search-card.all.click&vd_source=be08cd9cc4a3d6f3fec83590352fca21">【循环神经网络】5分钟搞懂RNN，3D动画深入浅出_哔哩哔哩_bilibili</a></p>
+<p>前置知识：矩阵对矩阵的求导、矩阵对向量的求导运算</p>
 <h2 id="0x-1-RNN能干啥？"><a href="#0x-1-RNN能干啥？" class="headerlink" title="0x 1 RNN能干啥？"></a>0x 1 RNN能干啥？</h2><ul>
 <li><p>RNN可以为<strong>语言模型</strong>来建模</p>
 </li>
@@ -262,8 +263,8 @@
 <p>权重矩阵U和W的计算方法：</p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415111609154.png" alt="image-20230415111609154"></p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415111655359.png" alt="image-20230415111655359"></p>
-<p>推导有一点点问题。。。。</p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_7_1681543414953.png" alt="未命名文档(10)_7_1681543414953"></p>
+<p>最后为什么是加法呢？见下面的推导</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_7_1681561677242.png" alt="未命名文档(10)_7_1681561677242"></p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415111906498.png" alt="image-20230415111906498"></p>
 <h3 id="RNN的梯度爆炸和消失问题"><a href="#RNN的梯度爆炸和消失问题" class="headerlink" title="RNN的梯度爆炸和消失问题"></a>RNN的梯度爆炸和消失问题</h3><p>梯度消失 &#x3D;&gt; 训练缓慢 甚至停滞</p>
 <p>梯度爆炸 &#x3D;&gt; 可能不收敛</p>
@@ -275,6 +276,10 @@
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415154853403.png" alt="image-20230415154853403"></p>
 <p>误差计算</p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230415155136887.png" alt="image-20230415155136887"></p>
+<p>是的，向量a对自身求导得到的是一个矩阵，通常称为雅可比矩阵（Jacobian matrix）。雅可比矩阵是一个$m \times n$的矩阵，其中$m$表示输出向量的维度，$n$表示输入向量的维度。雅可比矩阵中的每个元素都是一个偏导数，表示输出向量的每个分量对输入向量的每个分量求偏导数的结果。</p>
+<p>具体来说，如果我们有一个$n$维向量$\mathbf{a}&#x3D;[a_1, a_2, …, a_n]$，其中每个分量都是一个实数，那么向量$\mathbf{a}$对自身求导的结果是一个$n \times n$的矩阵，记为$\mathbf{J}(\mathbf{a})$，其中第$i$行第$j$列的元素$[\mathbf{J}(\mathbf{a})]_{i,j}$表示$a_i$对$a_j$求偏导数的结果，即：</p>
+<p>$$[\mathbf{J}(\mathbf{a})]_{i,j} &#x3D; \frac{\partial a_i}{\partial a_j}$$</p>
+<p>雅可比矩阵在机器学习和深度学习中非常常见，例如在反向传播算法中，我们需要计算损失函数对网络参数的梯度，这个梯度通常可以表示为一个雅可比矩阵的形式。</p>
 
     </div>
 
