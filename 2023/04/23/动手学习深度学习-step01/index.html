@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"luke-blog.netlify.app","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="0x 0学习目录 python语法 数据操作 线性代数 线性回归 Softmax回归+损失函数+图片分类     后续学习可能需要补充的知识   矩阵论  0x 1 Python语法with关键字 Python 中的 with 语句用于异常处理，封装了 try…except…finally 编码范式，提高了易用性。  with 语句使代码更清晰、更具可读性， 它简化了文件流等公共资源的管理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动手学习深度学习">
+<meta property="og:url" content="https://luke-blog.netlify.app/2023/04/23/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-step01/index.html">
+<meta property="og:site_name" content="Luke-blog">
+<meta property="og:description" content="0x 0学习目录 python语法 数据操作 线性代数 线性回归 Softmax回归+损失函数+图片分类     后续学习可能需要补充的知识   矩阵论  0x 1 Python语法with关键字 Python 中的 with 语句用于异常处理，封装了 try…except…finally 编码范式，提高了易用性。  with 语句使代码更清晰、更具可读性， 它简化了文件流等公共资源的管理。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/note/69c34e7757b5f637c5bd8f053968896aef442e6e.png@!web-comment-note.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102655059.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102712809.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102800722.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102820736.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_20_1682240317289.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423170039416.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423170723670.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423170711424.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424090101577.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424090228191.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424100902679.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424101327209.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424101505648.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424101552092.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424103410413.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424103652967.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424103800619.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424104120651.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_21_1683167816691.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230503111030180.png">
+<meta property="og:image" content="https://zh.d2l.ai/_images/softmaxreg.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/Screenshot_20230504_155500_com.jideos.jnotes.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/400E564C26F275CC7763A4B07853619B.jpg">
+<meta property="article:published_time" content="2023-04-23T02:25:19.000Z">
+<meta property="article:modified_time" content="2023-05-04T08:24:10.049Z">
+<meta property="article:author" content="Luke">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i0.hdslb.com/bfs/note/69c34e7757b5f637c5bd8f053968896aef442e6e.png@!web-comment-note.webp">
+
+<link rel="canonical" href="https://luke-blog.netlify.app/2023/04/23/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-step01/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>动手学习深度学习 | Luke-blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Luke-blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Legends never die！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/23/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-step01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headIcon.jpg">
+      <meta itemprop="name" content="Luke">
+      <meta itemprop="description" content="我爱学习！~~~">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luke-blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          动手学习深度学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-23 10:25:19" itemprop="dateCreated datePublished" datetime="2023-04-23T10:25:19+08:00">2023-04-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-04 16:24:10" itemprop="dateModified" datetime="2023-05-04T16:24:10+08:00">2023-05-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">动手学深度学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="0x-0学习目录"><a href="#0x-0学习目录" class="headerlink" title="0x 0学习目录"></a>0x 0学习目录</h2><ul>
+<li>python语法</li>
+<li>数据操作</li>
+<li>线性代数</li>
+<li>线性回归</li>
+<li>Softmax回归+损失函数+图片分类</li>
+</ul>
+<blockquote>
+<p>  后续学习可能需要补充的知识</p>
+</blockquote>
+<ul>
+<li>矩阵论</li>
+</ul>
+<h2 id="0x-1-Python语法"><a href="#0x-1-Python语法" class="headerlink" title="0x 1 Python语法"></a>0x 1 Python语法</h2><h3 id="with关键字"><a href="#with关键字" class="headerlink" title="with关键字"></a>with关键字</h3><ul>
+<li><p>Python 中的 <strong>with</strong> 语句用于异常处理，封装了 <strong>try…except…finally</strong> 编码范式，提高了易用性。</p>
+</li>
+<li><p><strong>with</strong> 语句使代码更清晰、更具可读性， 它简化了文件流等公共资源的管理。</p>
+</li>
+</ul>
+<h3 id="backward-函数的理解"><a href="#backward-函数的理解" class="headerlink" title="backward()函数的理解"></a>backward()函数的理解</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_28731575/article/details/90342082">(25条消息) pytorch中backward()函数详解_backward函数_Camlin_Z的博客-CSDN博客</a></p>
+<h3 id="yield关键字的理解"><a href="#yield关键字的理解" class="headerlink" title="yield关键字的理解"></a>yield关键字的理解</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mieleizhi0522/article/details/82142856">(25条消息) python中yield的用法详解——最简单，最清晰的解释_python yield_冯爽朗的博客-CSDN博客</a></p>
+<h3 id="张量索引"><a href="#张量索引" class="headerlink" title="张量索引"></a>张量索引</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">features = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">labels = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">batch_indices = torch.tensor([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>])</span><br><span class="line"></span><br><span class="line">selected_features = features[batch_indices] <span class="comment"># tensor([1, 3, 5])</span></span><br><span class="line">selected_labels = labels[batch_indices] <span class="comment"># tensor([1, 1, 1])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="的含义"><a href="#的含义" class="headerlink" title="*的含义"></a>*的含义</h3><blockquote>
+<p>  Q</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_array</span>(<span class="params">data_arrays,batch_size,is_train=<span class="literal">True</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;构造一个PyTorch的数据迭代器&quot;&quot;&quot;</span></span><br><span class="line">    dataset = data.TensorDataset(*data_arrays)</span><br><span class="line">    <span class="keyword">return</span> data.DataLoader(dataset,batch_size,shuffle=is_train)</span><br></pre></td></tr></table></figure>
+
+<p>其中，*data_arrays是什么意思</p>
+<blockquote>
+<p>  A</p>
+</blockquote>
+<p><code>data_arrays</code>是一个由多个张量组成的元组，这些张量包含了数据集中的特征和标签数据。在Python中，<em>被称为可变位置参数，它可以将一个元组或列表展开成独立的位置参数。在这里，</em>data_arrays将元组中的每个张量作为单独的参数传递给了<code>TensorDataset</code>构造函数。</p>
+<p>举个例子，如果我们有以下张量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">features = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])</span><br><span class="line">labels = torch.tensor([1.0, 2.0, 3.0])</span><br></pre></td></tr></table></figure>
+
+<p>那么调用<code>TensorDataset(*data_arrays)</code>就相当于调用<code>TensorDataset(features, labels)</code>。这样，我们就可以使用PyTorch提供的数据集和数据迭代器来高效地读取和处理大规模数据集。</p>
+<p>在<code>load_array</code>函数中，我们首先通过<code>TensorDataset</code>将特征和标签数据组合成一个<code>dataset</code>对象。然后，我们使用<code>DataLoader</code>来创建一个迭代器，每次迭代时可以返回一个大小为<code>batch_size</code>的小批次数据。如果<code>is_train</code>为True，则打乱数据集顺序以增加随机性（即使特征和标签依然是匹配的）。这里的返回结果就是一个PyTorch数据迭代器，可以用于训练和测试深度学习模型。</p>
+<blockquote>
+<p>  以下的两种写法是一样的</p>
+</blockquote>
+<ul>
+<li>写法1：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;./test_runoob.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    file.write(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    file.close()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>写法2：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./test_runoob.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    file.write(<span class="string">&#x27;hello world !&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="torchvision库"><a href="#torchvision库" class="headerlink" title="torchvision库"></a>torchvision库</h3><p>pytorch对计算机视觉实现的库</p>
+<p><img src="https://i0.hdslb.com/bfs/note/69c34e7757b5f637c5bd8f053968896aef442e6e.png@!web-comment-note.webp" alt="img"></p>
+<h2 id="0x-2数据操作"><a href="#0x-2数据操作" class="headerlink" title="0x 2数据操作"></a>0x 2数据操作</h2><h3 id="N维数组"><a href="#N维数组" class="headerlink" title="N维数组"></a>N维数组</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102655059.png" alt="image-20230423102655059"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102712809.png" alt="image-20230423102712809"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102800722.png" alt="image-20230423102800722"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102820736.png" alt="image-20230423102820736"></p>
+<ul>
+<li>[1:3,1:]的意思是<ul>
+<li>从第1行到第2行</li>
+<li>从第1列到最后一列</li>
+</ul>
+</li>
+<li>[::3,::2]的意思是<ul>
+<li>从第0行到最后一行，步长为3 行定位</li>
+<li>从第0列到最后一列，步长为2列定位</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>  仓库里面还有jupyter notebook可以看代码的讲解。</p>
+</blockquote>
+<h2 id="0x-2线性代数-下面只记录-不太清楚-x2F-忘记-x2F-有别名-的概念"><a href="#0x-2线性代数-下面只记录-不太清楚-x2F-忘记-x2F-有别名-的概念" class="headerlink" title="0x 2线性代数-下面只记录   不太清楚&#x2F;忘记&#x2F;有别名   的概念"></a>0x 2线性代数-下面只记录   不太清楚&#x2F;忘记&#x2F;有别名   的概念</h2><h3 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_20_1682240317289.png" alt="未命名文档(10)_20_1682240317289"></p>
+<p>暂且理解下面的不等式   类比勾股定理</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423170039416.png" alt="image-20230423170039416"></p>
+<h3 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423170723670.png" alt="image-20230423170723670"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423170711424.png" alt="image-20230423170711424"></p>
+<h3 id="哈达玛积"><a href="#哈达玛积" class="headerlink" title="哈达玛积"></a>哈达玛积</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424090101577.png" alt="image-20230424090101577"></p>
+<p>其中，A、B都张这样：</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424090228191.png" alt="image-20230424090228191"></p>
+<h3 id="讲矩阵导数时遇到的一些奇奇怪怪的东西："><a href="#讲矩阵导数时遇到的一些奇奇怪怪的东西：" class="headerlink" title="讲矩阵导数时遇到的一些奇奇怪怪的东西："></a>讲矩阵导数时遇到的一些奇奇怪怪的东西：</h3><ul>
+<li>不可导点处，假装它可导</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424100902679.png" alt="image-20230424100902679"></p>
+<ul>
+<li>梯度&#x2F;对向量求导（零基础入门系列当中也有讲过）</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424101327209.png" alt="image-20230424101327209"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424101505648.png" alt="image-20230424101505648"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424101552092.png" alt="image-20230424101552092"></p>
+<ul>
+<li>链导法</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424103410413.png" alt="image-20230424103410413"></p>
+<ul>
+<li>计算图（方便计算机来做求导运算）</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424103652967.png" alt="image-20230424103652967"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424103800619.png" alt="image-20230424103800619"></p>
+<p>上面的是显式构造，下面的是隐式构造</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424104120651.png" alt="image-20230424104120651"></p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h3 id="盘代码逻辑"><a href="#盘代码逻辑" class="headerlink" title="盘代码逻辑"></a>盘代码逻辑</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_21_1683167816691.png" alt="未命名文档(10)_21_1683167816691"></p>
+<h2 id="Softmax回归-损失函数-图片分类"><a href="#Softmax回归-损失函数-图片分类" class="headerlink" title="Softmax回归+损失函数+图片分类"></a>Softmax回归+损失函数+图片分类</h2><h3 id="它能解决什么问题？e-g"><a href="#它能解决什么问题？e-g" class="headerlink" title="它能解决什么问题？e.g."></a>它能解决什么问题？e.g.</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230503111030180.png" alt="image-20230503111030180"></p>
+<h3 id="softmax回归"><a href="#softmax回归" class="headerlink" title="softmax回归"></a>softmax回归</h3><p><img src="https://zh.d2l.ai/_images/softmaxreg.svg"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/Screenshot_20230504_155500_com.jideos.jnotes.png" alt="Screenshot_20230504_155500_com.jideos.jnotes"></p>
+<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/400E564C26F275CC7763A4B07853619B.jpg" alt="img"></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/04/23/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%80%9D%E8%B7%AF%E7%AF%87/" rel="prev" title="动手学深度学习-思路篇">
+      <i class="fa fa-chevron-left"></i> 动手学深度学习-思路篇
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/04/25/PT%E9%85%8D%E7%BD%AE/" rel="next" title="PT配置">
+      PT配置 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x-0%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">0x 0学习目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x-1-Python%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">0x 1 Python语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#with%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.1.</span> <span class="nav-text">with关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#backward-%E5%87%BD%E6%95%B0%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">2.2.</span> <span class="nav-text">backward()函数的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yield%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">2.3.</span> <span class="nav-text">yield关键字的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E7%B4%A2%E5%BC%95"><span class="nav-number">2.4.</span> <span class="nav-text">张量索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-number">2.5.</span> <span class="nav-text">*的含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torchvision%E5%BA%93"><span class="nav-number">2.6.</span> <span class="nav-text">torchvision库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x-2%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">0x 2数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#N%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">3.1.</span> <span class="nav-text">N维数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x-2%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E4%B8%8B%E9%9D%A2%E5%8F%AA%E8%AE%B0%E5%BD%95-%E4%B8%8D%E5%A4%AA%E6%B8%85%E6%A5%9A-x2F-%E5%BF%98%E8%AE%B0-x2F-%E6%9C%89%E5%88%AB%E5%90%8D-%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">4.</span> <span class="nav-text">0x 2线性代数-下面只记录   不太清楚&#x2F;忘记&#x2F;有别名   的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8C%83%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">范数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%AE%E6%8D%A2%E7%9F%A9%E9%98%B5"><span class="nav-number">4.2.</span> <span class="nav-text">置换矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E8%BE%BE%E7%8E%9B%E7%A7%AF"><span class="nav-number">4.3.</span> <span class="nav-text">哈达玛积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B2%E7%9F%A9%E9%98%B5%E5%AF%BC%E6%95%B0%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E4%B8%9C%E8%A5%BF%EF%BC%9A"><span class="nav-number">4.4.</span> <span class="nav-text">讲矩阵导数时遇到的一些奇奇怪怪的东西：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-number">5.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%98%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91"><span class="nav-number">5.1.</span> <span class="nav-text">盘代码逻辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Softmax%E5%9B%9E%E5%BD%92-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0-%E5%9B%BE%E7%89%87%E5%88%86%E7%B1%BB"><span class="nav-number">6.</span> <span class="nav-text">Softmax回归+损失函数+图片分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%83%E8%83%BD%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9Fe-g"><span class="nav-number">6.1.</span> <span class="nav-text">它能解决什么问题？e.g.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#softmax%E5%9B%9E%E5%BD%92"><span class="nav-number">6.2.</span> <span class="nav-text">softmax回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">6.3.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">6.4.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luke"
+      src="/images/headIcon.jpg">
+  <p class="site-author-name" itemprop="name">Luke</p>
+  <div class="site-description" itemprop="description">我爱学习！~~~</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Luke</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

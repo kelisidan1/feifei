@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"luke-blog.netlify.app","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="0x0 前置知识 0x1 什么什么，这是什么 Long Short-term Memory (LSTM)   比较长的短时记忆   0x2 视频学习🖊LSTM解决了什么问题？ 解决了梯度消失，但是没有解决梯度爆炸。 为什么能解决梯度消失的问题？  LSTM的Solution 在t 时刻，LSTM的输入有三个：  xt  t-1时刻的LSTM输出值ht-1 t-1时刻的单元状态ct-1  输出有两">
+  <meta name="description" content="0x0 前置知识 0x1 什么什么，这是什么 Long Short-term Memory (LSTM)   比较长的短时记忆   0x2 视频学习🖊LSTM解决了什么问题？ 解决了梯度消失，但是没有解决梯度爆炸。 为什么能解决梯度消失的问题？    LSTM的Solution 在t 时刻，LSTM的输入有三个：  xt  t-1时刻的LSTM输出值ht-1 t-1时刻的单元状态ct-1  输出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="零基础入门深度学习-长短时记忆网络LSTM">
 <meta property="og:url" content="https://luke-blog.netlify.app/2023/04/16/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E9%95%BF%E7%9F%AD%E6%97%B6%E8%AE%B0%E5%BF%86%E7%BD%91%E7%BB%9CLSTM/index.html">
 <meta property="og:site_name" content="Luke-blog">
-<meta property="og:description" content="0x0 前置知识 0x1 什么什么，这是什么 Long Short-term Memory (LSTM)   比较长的短时记忆   0x2 视频学习🖊LSTM解决了什么问题？ 解决了梯度消失，但是没有解决梯度爆炸。 为什么能解决梯度消失的问题？  LSTM的Solution 在t 时刻，LSTM的输入有三个：  xt  t-1时刻的LSTM输出值ht-1 t-1时刻的单元状态ct-1  输出有两">
+<meta property="og:description" content="0x0 前置知识 0x1 什么什么，这是什么 Long Short-term Memory (LSTM)   比较长的短时记忆   0x2 视频学习🖊LSTM解决了什么问题？ 解决了梯度消失，但是没有解决梯度爆炸。 为什么能解决梯度消失的问题？    LSTM的Solution 在t 时刻，LSTM的输入有三个：  xt  t-1时刻的LSTM输出值ht-1 t-1时刻的单元状态ct-1  输出">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_11_1681633813176.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230416083511755.png">
@@ -42,7 +42,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_17_1681717978845.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_18_1681718000135.png">
 <meta property="article:published_time" content="2023-04-16T00:00:12.000Z">
-<meta property="article:modified_time" content="2023-04-17T07:53:58.833Z">
+<meta property="article:modified_time" content="2023-04-22T07:18:02.925Z">
 <meta property="article:author" content="Luke">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_11_1681633813176.png">
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-17 15:53:58" itemprop="dateModified" datetime="2023-04-17T15:53:58+08:00">2023-04-17</time>
+                <time title="修改时间：2023-04-22 15:18:02" itemprop="dateModified" datetime="2023-04-22T15:18:02+08:00">2023-04-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,8 +225,10 @@
 </ul>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230416083511755.png" alt="image-20230416083511755"></p>
 <h2 id="0x2-视频学习🖊"><a href="#0x2-视频学习🖊" class="headerlink" title="0x2 视频学习🖊"></a>0x2 视频学习🖊</h2><h3 id="LSTM解决了什么问题？"><a href="#LSTM解决了什么问题？" class="headerlink" title="LSTM解决了什么问题？"></a>LSTM解决了什么问题？</h3><ul>
-<li>解决了梯度消失，但是没有解决梯度爆炸。</li>
+<li>解决了梯度消失，但是没有解决梯度爆炸。<ul>
 <li>为什么能解决梯度消失的问题？</li>
+</ul>
+</li>
 </ul>
 <h3 id="LSTM的Solution"><a href="#LSTM的Solution" class="headerlink" title="LSTM的Solution"></a>LSTM的Solution</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230416140347307.png" alt="image-20230416140347307"></p>
 <p>在t 时刻，LSTM的输入有三个：</p>
@@ -244,7 +246,8 @@
 </ul>
 <h3 id="But-怎么样让状态长期保存？？？？？"><a href="#But-怎么样让状态长期保存？？？？？" class="headerlink" title="But, 怎么样让状态长期保存？？？？？"></a>But, 怎么样让状态长期保存？？？？？</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230416141316946.png" alt="image-20230416141316946"></p>
 <ul>
-<li>开关怎么实现？&#x3D;&gt; 门的概念<ul>
+<li><p>开关怎么实现？&#x3D;&gt; 门的概念</p>
+<ul>
 <li>啥是门？ &#x3D;&gt; 一层全连接层，输入是一个向量，输出是一个0到1之间的实数向量</li>
 <li>门可以表示成这样：<img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230416142120679.png" alt="image-20230416142120679"></li>
 <li>其中<em>σ</em>是sigmoid函数，所以门的状态都是半开半闭，这意味着<ul>
@@ -254,6 +257,8 @@
 </ul>
 </li>
 </ul>
+</li>
+<li><p>注意看，h<sub>t</sub>的输出其实会copy一份到y<sub>t</sub></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_9_1681631918050.png" alt="未命名文档(10)_9_1681631918050"></p>
@@ -265,6 +270,10 @@
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_16_1681717955710.png" alt="未命名文档(10)_16_1681717955710"></p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_17_1681717978845.png" alt="未命名文档(10)_17_1681717978845"></p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_18_1681718000135.png" alt="未命名文档(10)_18_1681718000135"></p>
+<h2 id="0x3-python小知识学习"><a href="#0x3-python小知识学习" class="headerlink" title="0x3 python小知识学习"></a>0x3 python小知识学习</h2><p>np.transpose()函数</p>
+<p>一句话简单说：改变np数组结构的函数，类比excel表当中x轴y轴互换操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.arange(<span class="number">4</span>).reshape((<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-------------------------&#x27;</span>)</span><br><span class="line">x = np.transpose(x)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;====================&#x27;</span>)</span><br><span class="line">y = np.arange(<span class="number">12</span>).reshape((<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-------------------------&#x27;</span>)</span><br><span class="line">y = np.transpose(y,(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过transpose()函数改变了x的索引值为（2，1，0），对应（y，x，z）</span></span><br><span class="line"><span class="comment"># 也就是 原本的 y[1][0][0]的元素</span></span><br><span class="line"><span class="comment"># 变成了 现在的 y[0][0][1]元素</span></span><br><span class="line"><span class="comment"># 二维的话就相当于转置</span></span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -283,7 +292,10 @@
     <a href="/2023/04/15/%E6%96%AD%E5%89%91%E9%87%8D%E9%93%B8%E4%B9%8B%E6%97%A5%EF%BC%8C%E9%AA%91%E5%A3%AB%E5%BD%92%E6%9D%A5%E4%B9%8B%E6%97%B6/" rel="prev" title="断剑重铸之日，骑士归来之时">
       <i class="fa fa-chevron-left"></i> 断剑重铸之日，骑士归来之时
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/04/23/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%80%9D%E8%B7%AF%E7%AF%87/" rel="next" title="动手学深度学习-思路篇">
+      动手学深度学习-思路篇 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -342,7 +354,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">0x0 前置知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x1-%E4%BB%80%E4%B9%88%E4%BB%80%E4%B9%88%EF%BC%8C%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">2.</span> <span class="nav-text">0x1 什么什么，这是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x2-%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%F0%9F%96%8A"><span class="nav-number">3.</span> <span class="nav-text">0x2 视频学习🖊</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">LSTM解决了什么问题？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM%E7%9A%84Solution"><span class="nav-number">3.2.</span> <span class="nav-text">LSTM的Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#But-%E6%80%8E%E4%B9%88%E6%A0%B7%E8%AE%A9%E7%8A%B6%E6%80%81%E9%95%BF%E6%9C%9F%E4%BF%9D%E5%AD%98%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F"><span class="nav-number">3.3.</span> <span class="nav-text">But, 怎么样让状态长期保存？？？？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AF%B9LSTM%E8%BF%9B%E8%A1%8C%E8%AE%AD%E7%BB%83"><span class="nav-number">3.4.</span> <span class="nav-text">如何对LSTM进行训练</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">0x0 前置知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x1-%E4%BB%80%E4%B9%88%E4%BB%80%E4%B9%88%EF%BC%8C%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">2.</span> <span class="nav-text">0x1 什么什么，这是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x2-%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%F0%9F%96%8A"><span class="nav-number">3.</span> <span class="nav-text">0x2 视频学习🖊</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">LSTM解决了什么问题？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM%E7%9A%84Solution"><span class="nav-number">3.2.</span> <span class="nav-text">LSTM的Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#But-%E6%80%8E%E4%B9%88%E6%A0%B7%E8%AE%A9%E7%8A%B6%E6%80%81%E9%95%BF%E6%9C%9F%E4%BF%9D%E5%AD%98%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F"><span class="nav-number">3.3.</span> <span class="nav-text">But, 怎么样让状态长期保存？？？？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AF%B9LSTM%E8%BF%9B%E8%A1%8C%E8%AE%AD%E7%BB%83"><span class="nav-number">3.4.</span> <span class="nav-text">如何对LSTM进行训练</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x3-python%E5%B0%8F%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0"><span class="nav-number">4.</span> <span class="nav-text">0x3 python小知识学习</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -358,12 +370,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
       </div>
   </nav>

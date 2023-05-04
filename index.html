@@ -148,6 +148,538 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/28/Building%20configuration/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headIcon.jpg">
+      <meta itemprop="name" content="Luke">
+      <meta itemprop="description" content="我爱学习！~~~">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luke-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/28/Building%20configuration/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-28 09:39:39" itemprop="dateCreated datePublished" datetime="2023-04-28T09:39:39+08:00">2023-04-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">Building configuration...</span><br><span class="line"></span><br><span class="line">Current configuration : 1094 bytes</span><br><span class="line">!</span><br><span class="line">version 15.1</span><br><span class="line">no service timestamps log datetime msec</span><br><span class="line">no service timestamps debug datetime msec</span><br><span class="line">no service password-encryption</span><br><span class="line">!</span><br><span class="line">hostname Out-Router</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">no ip cef</span><br><span class="line">no ipv6 cef</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">license udi pid CISCO2811/K9 sn FTX10176ABZ-</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">spanning-tree mode pvst</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">interface FastEthernet0/0</span><br><span class="line"> ip address 192.168.4.1 255.255.255.0</span><br><span class="line"> ip nat inside</span><br><span class="line"> duplex auto</span><br><span class="line"> speed auto</span><br><span class="line">!</span><br><span class="line">interface FastEthernet0/1</span><br><span class="line"> no ip address</span><br><span class="line"> duplex auto</span><br><span class="line"> speed auto</span><br><span class="line"> shutdown</span><br><span class="line">!</span><br><span class="line">interface Serial0/2/0</span><br><span class="line"> ip address 200.10.10.1 255.255.255.252</span><br><span class="line"> ip nat outside</span><br><span class="line"> clock rate 64000</span><br><span class="line">!</span><br><span class="line">interface Serial0/2/1</span><br><span class="line"> no ip address</span><br><span class="line"> clock rate 2000000</span><br><span class="line"> shutdown</span><br><span class="line">!</span><br><span class="line">interface Vlan1</span><br><span class="line"> no ip address</span><br><span class="line"> shutdown</span><br><span class="line">!</span><br><span class="line">router ospf 40</span><br><span class="line"> log-adjacency-changes</span><br><span class="line"> network 192.168.4.0 0.0.0.255 area 0</span><br><span class="line"> default-information originate</span><br><span class="line">!</span><br><span class="line">ip nat pool ipPool 200.10.10.1 200.10.10.1 netmask 255.255.255.252</span><br><span class="line">ip nat inside source list 1 pool ipPool overload</span><br><span class="line">ip classless</span><br><span class="line">ip route 0.0.0.0 0.0.0.0 200.10.10.2 </span><br><span class="line">!</span><br><span class="line">ip flow-export version 9</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">access-list 1 permit any</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">line con 0</span><br><span class="line">!</span><br><span class="line">line aux 0</span><br><span class="line">!</span><br><span class="line">line vty 0 4</span><br><span class="line"> login</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">!</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/25/PT%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headIcon.jpg">
+      <meta itemprop="name" content="Luke">
+      <meta itemprop="description" content="我爱学习！~~~">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luke-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/25/PT%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">PT配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-25 15:05:31" itemprop="dateCreated datePublished" datetime="2023-04-25T15:05:31+08:00">2023-04-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-27 09:47:29" itemprop="dateModified" datetime="2023-04-27T09:47:29+08:00">2023-04-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">工具使用</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="0x-0-说明"><a href="#0x-0-说明" class="headerlink" title="0x 0 说明"></a>0x 0 说明</h2><p>解决问题：如何快速搭建起一个企业级网络。</p>
+<p>注意： 以下的命令均为举例说明</p>
+<p># todo ACL控制</p>
+<h2 id="0x-1-各类设备命令"><a href="#0x-1-各类设备命令" class="headerlink" title="0x 1 各类设备命令"></a>0x 1 各类设备命令</h2><h3 id="三层交换机（左）"><a href="#三层交换机（左）" class="headerlink" title="三层交换机（左）"></a>三层交换机（左）</h3><blockquote>
+<p>  配置Vlan, vtp(vlan数据库)</p>
+</blockquote>
+<ul>
+<li>vtp：它是思科私有协议。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">en</span><br><span class="line">conf t</span><br><span class="line">vtp domain cisco</span><br><span class="line">vtp mode server</span><br><span class="line">vtp password 123456</span><br><span class="line">vlan 10</span><br><span class="line">vlan 20</span><br><span class="line">vlan 30</span><br><span class="line">vlan 40</span><br><span class="line">vlan 50</span><br><span class="line">vlan 60</span><br><span class="line">vlan 70</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>  配置ip地址（和防火墙链接的那个口）</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int g0/0/1 # 进入接口</span><br><span class="line">no switchport # 转成三层接口 (带ip)</span><br><span class="line">ip address 192.168.2.2 255.255.255.0</span><br><span class="line">no shutdown</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>  开启路由功能,让其变成有路由功能的交换机</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip routing</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>  链路聚合组</p>
+</blockquote>
+<p>先创建一个链路聚合组，然后将几个端口放入到这个组当中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">interface Port-channel 1</span><br><span class="line"> switchport trunk encapsulation dot1q</span><br><span class="line"> switchport mode trunk</span><br><span class="line"></span><br><span class="line">interface GigabitEthernet1/0/22</span><br><span class="line"> switchport trunk encapsulation dot1q</span><br><span class="line"> switchport mode trunk</span><br><span class="line"> channel-group 1 mode on</span><br><span class="line"></span><br><span class="line">interface GigabitEthernet1/0/23</span><br><span class="line"> switchport trunk encapsulation dot1q</span><br><span class="line"> switchport mode trunk</span><br><span class="line"> channel-group 1 mode on</span><br><span class="line"></span><br><span class="line">interface GigabitEthernet1/0/24</span><br><span class="line"> switchport trunk encapsulation dot1q</span><br><span class="line"> switchport mode trunk</span><br><span class="line"> channel-group 1 mode on</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>dot1q就是 IEEE 802.1Q协议，是vlan的一种封装方式，是公有协议</li>
+</ul>
+<blockquote>
+<p>  生成树协议、冗余、优先级</p>
+</blockquote>
+<ul>
+<li>生成树</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spanning-tree vlan 10,20,30 root primary</span><br><span class="line">spanning-tree mode pvst</span><br><span class="line">spanning-tree vlan 40,50,60,70 root secondary</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>服务器集群的vlan10配置</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int vlan 10</span><br><span class="line">ip address 192.168.10.254 255.255.255.0</span><br><span class="line">standby 10 ip 192.168.10.252 # 将两个三层交换机看成一个设备</span><br><span class="line">standby 10 priority 120 #当前vlan的优先级是120，如果是vlan10发送过来的数据包</span><br><span class="line">standby 10 preempt #抢占模式，按说vlan10的数据包都是我来接受，但是如果交换机坏了，就要给另一个三层设备进行处理，当我修好之后，就又要抢占回来</span><br><span class="line">standby 10 track GigabitEthernet1/0/7 #上行链路接口，当这个交换机不好使的时候，该把数据包传给谁</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>各个办公机构的vlan配置</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">interface Vlan20</span><br><span class="line"> ip address 192.168.20.254 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1 # IP地址获取的中继（DHCP的地址）</span><br><span class="line"> standby 20 ip 192.168.20.252</span><br><span class="line"> standby 20 priority 120</span><br><span class="line"> standby 20 preempt</span><br><span class="line"> standby 20 track GigabitEthernet1/0/7</span><br><span class="line"></span><br><span class="line">interface Vlan30</span><br><span class="line"> ip address 192.168.30.254 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1</span><br><span class="line"> standby 30 ip 192.168.30.252</span><br><span class="line"> standby 30 priority 120</span><br><span class="line"> standby 30 preempt</span><br><span class="line"> standby 30 track GigabitEthernet1/0/7</span><br><span class="line"> </span><br><span class="line">interface Vlan40</span><br><span class="line"> ip address 192.168.40.254 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1</span><br><span class="line"> standby 40 ip 192.168.40.252</span><br><span class="line"> standby 40 track GigabitEthernet1/0/7</span><br><span class="line"> </span><br><span class="line">interface Vlan50</span><br><span class="line"> ip address 192.168.50.254 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1</span><br><span class="line"> standby 50 ip 192.168.50.252</span><br><span class="line"> standby 50 track GigabitEthernet1/0/7</span><br><span class="line"></span><br><span class="line">interface Vlan60</span><br><span class="line"> ip address 192.168.60.254 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1</span><br><span class="line"> standby 60 ip 192.168.60.252</span><br><span class="line"> standby 60 track GigabitEthernet1/0/7</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="三层交换机（右）"><a href="#三层交换机（右）" class="headerlink" title="三层交换机（右）"></a>三层交换机（右）</h3><blockquote>
+<p>  配置Vlan, vtp(vlan数据库)</p>
+</blockquote>
+<ul>
+<li>vtp：它是思科私有协议。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">en</span><br><span class="line">conf t</span><br><span class="line">vtp domain cisco</span><br><span class="line">vtp mode server</span><br><span class="line">vtp password 123456</span><br><span class="line">vlan 10</span><br><span class="line">vlan 20</span><br><span class="line">vlan 30</span><br><span class="line">vlan 40</span><br><span class="line">vlan 50</span><br><span class="line">vlan 60</span><br><span class="line">vlan 70</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  配置ip地址（和防火墙链接的那个口）</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int g0/0/1 # 进入接口</span><br><span class="line">no switchport # 转成三层接口 (带ip)</span><br><span class="line">ip address 192.168.2.2 255.255.255.0</span><br><span class="line">no shutdown</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  链路聚合组</p>
+</blockquote>
+<p>先创建一个链路聚合组，然后将几个端口放入到这个组当中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">interface Port-channel 1</span><br><span class="line"> switchport trunk encapsulation dot1q</span><br><span class="line"> switchport mode trunk</span><br><span class="line"></span><br><span class="line">interface GigabitEthernet1/0/22</span><br><span class="line"> switchport trunk encapsulation dot1q</span><br><span class="line"> switchport mode trunk</span><br><span class="line"> channel-group 1 mode on</span><br><span class="line"></span><br><span class="line">interface GigabitEthernet1/0/23</span><br><span class="line"> switchport trunk encapsulation dot1q</span><br><span class="line"> switchport mode trunk</span><br><span class="line"> channel-group 1 mode on</span><br><span class="line"></span><br><span class="line">interface GigabitEthernet1/0/24</span><br><span class="line"> switchport trunk encapsulation dot1q</span><br><span class="line"> switchport mode trunk</span><br><span class="line"> channel-group 1 mode on</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>dot1q就是 IEEE 802.1Q协议，是vlan的一种封装方式，是公有协议</li>
+</ul>
+<blockquote>
+<p>  开启路由功能,让其变成有路由功能的交换机</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip routing</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>  vlan和优先级配置</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">interface Vlan10</span><br><span class="line"> ip address 192.168.10.253 255.255.255.0</span><br><span class="line"> standby 10 ip 192.168.10.252</span><br><span class="line"> standby 10 track GigabitEthernet1/0/1</span><br><span class="line"> standby 10 track GigabitEthernet1/0/7</span><br><span class="line"></span><br><span class="line">interface Vlan20</span><br><span class="line"> ip address 192.168.20.253 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1</span><br><span class="line"> standby 20 ip 192.168.20.252</span><br><span class="line"> standby 20 track GigabitEthernet1/0/7</span><br><span class="line"></span><br><span class="line">interface Vlan30</span><br><span class="line"> ip address 192.168.30.253 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1</span><br><span class="line"> standby 30 ip 192.168.30.252</span><br><span class="line"> standby 30 track GigabitEthernet1/0/7</span><br><span class="line"></span><br><span class="line">interface Vlan40</span><br><span class="line"> ip address 192.168.40.253 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1</span><br><span class="line"> standby 40 ip 192.168.40.252</span><br><span class="line"> standby 40 track GigabitEthernet1/0/7</span><br><span class="line"></span><br><span class="line">interface Vlan50</span><br><span class="line"> ip address 192.168.50.253 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1</span><br><span class="line"> standby 50 ip 192.168.50.252</span><br><span class="line"> standby 50 priority 120</span><br><span class="line"> standby 50 preempt</span><br><span class="line"> standby 50 track GigabitEthernet1/0/7</span><br><span class="line"></span><br><span class="line">interface Vlan60</span><br><span class="line"> ip address 192.168.60.253 255.255.255.0</span><br><span class="line"> ip helper-address 192.168.10.1</span><br><span class="line"> standby 60 ip 192.168.60.252</span><br><span class="line"> standby 60 priority 120</span><br><span class="line"> standby 60 preempt</span><br><span class="line"> standby 60 track GigabitEthernet1/0/7</span><br><span class="line"></span><br><span class="line">interface Vlan70</span><br><span class="line"> ip address 192.168.70.254 255.255.255.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="二层交换机配置"><a href="#二层交换机配置" class="headerlink" title="二层交换机配置"></a>二层交换机配置</h3><blockquote>
+<p>   vtp配置（所有二层交换机都要配置）</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vtp domain cisco</span><br><span class="line">vtp mode client</span><br><span class="line">vtp password 123456</span><br></pre></td></tr></table></figure>
+
+<p>这样的话，就相当于每个二层交换机管理的vlan都是一个员工，而三层交换机是leader，由leader对员工进行统一管理</p>
+<blockquote>
+<p>  接口权限配置(其他二层和vlan10的类似，只要改数字就行)</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">interface GigabitEthernet0/1</span><br><span class="line"> switchport mode trunk</span><br><span class="line"></span><br><span class="line">interface GigabitEthernet0/2</span><br><span class="line"> switchport mode trunk</span><br><span class="line"></span><br><span class="line">interface FastEthernet0/1</span><br><span class="line"> switchport access vlan 10</span><br><span class="line"> switchport mode access</span><br><span class="line"></span><br><span class="line">interface FastEthernet0/2</span><br><span class="line"> switchport access vlan 10</span><br><span class="line"> switchport mode access</span><br><span class="line"></span><br><span class="line">interface FastEthernet0/3</span><br><span class="line"> switchport access vlan 10</span><br><span class="line"> switchport mode access</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="DHCP服务器配置"><a href="#DHCP服务器配置" class="headerlink" title="DHCP服务器配置"></a>DHCP服务器配置</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230425163823276.png" alt="image-20230425163823276"></p>
+<h3 id="无线AP配置"><a href="#无线AP配置" class="headerlink" title="无线AP配置"></a>无线AP配置</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230425164012989.png" alt="image-20230425164012989"></p>
+<h3 id="防火墙配置"><a href="#防火墙配置" class="headerlink" title="防火墙配置"></a>防火墙配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">en</span><br><span class="line">conf t</span><br><span class="line">interface GigabitEthernet1/1</span><br><span class="line">nameif trust-1</span><br><span class="line">security-level 100</span><br><span class="line">ip address 192.168.2.1 255.255.255.0</span><br><span class="line">no shutdown</span><br><span class="line"></span><br><span class="line">interface GigabitEthernet1/2</span><br><span class="line">nameif trust-2</span><br><span class="line">security-level 100</span><br><span class="line">ip address 192.168.3.1 255.255.255.0</span><br><span class="line">no shutdown</span><br><span class="line"> </span><br><span class="line">interface GigabitEthernet1/3</span><br><span class="line">nameif untrust</span><br><span class="line">security-level 0</span><br><span class="line">ip address 192.168.4.2 255.255.255.0</span><br><span class="line">no shutdown</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="路由器配置（out-router）"><a href="#路由器配置（out-router）" class="headerlink" title="路由器配置（out router）"></a>路由器配置（out router）</h3><blockquote>
+<p>  配置ip地址</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface FastEthernet0/0</span><br><span class="line"> ip address 192.168.4.1 255.255.255.0</span><br><span class="line"> ip nat inside</span><br><span class="line"></span><br><span class="line">interface Serial0/2/0</span><br><span class="line"> ip address 200.10.10.1 255.255.255.252</span><br><span class="line"> ip nat outside</span><br><span class="line"> clock rate 64000</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/23/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-step01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headIcon.jpg">
+      <meta itemprop="name" content="Luke">
+      <meta itemprop="description" content="我爱学习！~~~">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luke-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/23/%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-step01/" class="post-title-link" itemprop="url">动手学习深度学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-23 10:25:19" itemprop="dateCreated datePublished" datetime="2023-04-23T10:25:19+08:00">2023-04-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-04 16:24:10" itemprop="dateModified" datetime="2023-05-04T16:24:10+08:00">2023-05-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">动手学深度学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="0x-0学习目录"><a href="#0x-0学习目录" class="headerlink" title="0x 0学习目录"></a>0x 0学习目录</h2><ul>
+<li>python语法</li>
+<li>数据操作</li>
+<li>线性代数</li>
+<li>线性回归</li>
+<li>Softmax回归+损失函数+图片分类</li>
+</ul>
+<blockquote>
+<p>  后续学习可能需要补充的知识</p>
+</blockquote>
+<ul>
+<li>矩阵论</li>
+</ul>
+<h2 id="0x-1-Python语法"><a href="#0x-1-Python语法" class="headerlink" title="0x 1 Python语法"></a>0x 1 Python语法</h2><h3 id="with关键字"><a href="#with关键字" class="headerlink" title="with关键字"></a>with关键字</h3><ul>
+<li><p>Python 中的 <strong>with</strong> 语句用于异常处理，封装了 <strong>try…except…finally</strong> 编码范式，提高了易用性。</p>
+</li>
+<li><p><strong>with</strong> 语句使代码更清晰、更具可读性， 它简化了文件流等公共资源的管理。</p>
+</li>
+</ul>
+<h3 id="backward-函数的理解"><a href="#backward-函数的理解" class="headerlink" title="backward()函数的理解"></a>backward()函数的理解</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_28731575/article/details/90342082">(25条消息) pytorch中backward()函数详解_backward函数_Camlin_Z的博客-CSDN博客</a></p>
+<h3 id="yield关键字的理解"><a href="#yield关键字的理解" class="headerlink" title="yield关键字的理解"></a>yield关键字的理解</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mieleizhi0522/article/details/82142856">(25条消息) python中yield的用法详解——最简单，最清晰的解释_python yield_冯爽朗的博客-CSDN博客</a></p>
+<h3 id="张量索引"><a href="#张量索引" class="headerlink" title="张量索引"></a>张量索引</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">features = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">labels = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">batch_indices = torch.tensor([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>])</span><br><span class="line"></span><br><span class="line">selected_features = features[batch_indices] <span class="comment"># tensor([1, 3, 5])</span></span><br><span class="line">selected_labels = labels[batch_indices] <span class="comment"># tensor([1, 1, 1])</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="的含义"><a href="#的含义" class="headerlink" title="*的含义"></a>*的含义</h3><blockquote>
+<p>  Q</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_array</span>(<span class="params">data_arrays,batch_size,is_train=<span class="literal">True</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;构造一个PyTorch的数据迭代器&quot;&quot;&quot;</span></span><br><span class="line">    dataset = data.TensorDataset(*data_arrays)</span><br><span class="line">    <span class="keyword">return</span> data.DataLoader(dataset,batch_size,shuffle=is_train)</span><br></pre></td></tr></table></figure>
+
+<p>其中，*data_arrays是什么意思</p>
+<blockquote>
+<p>  A</p>
+</blockquote>
+<p><code>data_arrays</code>是一个由多个张量组成的元组，这些张量包含了数据集中的特征和标签数据。在Python中，<em>被称为可变位置参数，它可以将一个元组或列表展开成独立的位置参数。在这里，</em>data_arrays将元组中的每个张量作为单独的参数传递给了<code>TensorDataset</code>构造函数。</p>
+<p>举个例子，如果我们有以下张量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">features = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])</span><br><span class="line">labels = torch.tensor([1.0, 2.0, 3.0])</span><br></pre></td></tr></table></figure>
+
+<p>那么调用<code>TensorDataset(*data_arrays)</code>就相当于调用<code>TensorDataset(features, labels)</code>。这样，我们就可以使用PyTorch提供的数据集和数据迭代器来高效地读取和处理大规模数据集。</p>
+<p>在<code>load_array</code>函数中，我们首先通过<code>TensorDataset</code>将特征和标签数据组合成一个<code>dataset</code>对象。然后，我们使用<code>DataLoader</code>来创建一个迭代器，每次迭代时可以返回一个大小为<code>batch_size</code>的小批次数据。如果<code>is_train</code>为True，则打乱数据集顺序以增加随机性（即使特征和标签依然是匹配的）。这里的返回结果就是一个PyTorch数据迭代器，可以用于训练和测试深度学习模型。</p>
+<blockquote>
+<p>  以下的两种写法是一样的</p>
+</blockquote>
+<ul>
+<li>写法1：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;./test_runoob.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    file.write(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    file.close()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>写法2：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./test_runoob.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    file.write(<span class="string">&#x27;hello world !&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="torchvision库"><a href="#torchvision库" class="headerlink" title="torchvision库"></a>torchvision库</h3><p>pytorch对计算机视觉实现的库</p>
+<p><img src="https://i0.hdslb.com/bfs/note/69c34e7757b5f637c5bd8f053968896aef442e6e.png@!web-comment-note.webp" alt="img"></p>
+<h2 id="0x-2数据操作"><a href="#0x-2数据操作" class="headerlink" title="0x 2数据操作"></a>0x 2数据操作</h2><h3 id="N维数组"><a href="#N维数组" class="headerlink" title="N维数组"></a>N维数组</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102655059.png" alt="image-20230423102655059"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102712809.png" alt="image-20230423102712809"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102800722.png" alt="image-20230423102800722"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423102820736.png" alt="image-20230423102820736"></p>
+<ul>
+<li>[1:3,1:]的意思是<ul>
+<li>从第1行到第2行</li>
+<li>从第1列到最后一列</li>
+</ul>
+</li>
+<li>[::3,::2]的意思是<ul>
+<li>从第0行到最后一行，步长为3 行定位</li>
+<li>从第0列到最后一列，步长为2列定位</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>  仓库里面还有jupyter notebook可以看代码的讲解。</p>
+</blockquote>
+<h2 id="0x-2线性代数-下面只记录-不太清楚-x2F-忘记-x2F-有别名-的概念"><a href="#0x-2线性代数-下面只记录-不太清楚-x2F-忘记-x2F-有别名-的概念" class="headerlink" title="0x 2线性代数-下面只记录   不太清楚&#x2F;忘记&#x2F;有别名   的概念"></a>0x 2线性代数-下面只记录   不太清楚&#x2F;忘记&#x2F;有别名   的概念</h2><h3 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_20_1682240317289.png" alt="未命名文档(10)_20_1682240317289"></p>
+<p>暂且理解下面的不等式   类比勾股定理</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423170039416.png" alt="image-20230423170039416"></p>
+<h3 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423170723670.png" alt="image-20230423170723670"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423170711424.png" alt="image-20230423170711424"></p>
+<h3 id="哈达玛积"><a href="#哈达玛积" class="headerlink" title="哈达玛积"></a>哈达玛积</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424090101577.png" alt="image-20230424090101577"></p>
+<p>其中，A、B都张这样：</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424090228191.png" alt="image-20230424090228191"></p>
+<h3 id="讲矩阵导数时遇到的一些奇奇怪怪的东西："><a href="#讲矩阵导数时遇到的一些奇奇怪怪的东西：" class="headerlink" title="讲矩阵导数时遇到的一些奇奇怪怪的东西："></a>讲矩阵导数时遇到的一些奇奇怪怪的东西：</h3><ul>
+<li>不可导点处，假装它可导</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424100902679.png" alt="image-20230424100902679"></p>
+<ul>
+<li>梯度&#x2F;对向量求导（零基础入门系列当中也有讲过）</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424101327209.png" alt="image-20230424101327209"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424101505648.png" alt="image-20230424101505648"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424101552092.png" alt="image-20230424101552092"></p>
+<ul>
+<li>链导法</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424103410413.png" alt="image-20230424103410413"></p>
+<ul>
+<li>计算图（方便计算机来做求导运算）</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424103652967.png" alt="image-20230424103652967"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424103800619.png" alt="image-20230424103800619"></p>
+<p>上面的是显式构造，下面的是隐式构造</p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230424104120651.png" alt="image-20230424104120651"></p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h3 id="盘代码逻辑"><a href="#盘代码逻辑" class="headerlink" title="盘代码逻辑"></a>盘代码逻辑</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_21_1683167816691.png" alt="未命名文档(10)_21_1683167816691"></p>
+<h2 id="Softmax回归-损失函数-图片分类"><a href="#Softmax回归-损失函数-图片分类" class="headerlink" title="Softmax回归+损失函数+图片分类"></a>Softmax回归+损失函数+图片分类</h2><h3 id="它能解决什么问题？e-g"><a href="#它能解决什么问题？e-g" class="headerlink" title="它能解决什么问题？e.g."></a>它能解决什么问题？e.g.</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230503111030180.png" alt="image-20230503111030180"></p>
+<h3 id="softmax回归"><a href="#softmax回归" class="headerlink" title="softmax回归"></a>softmax回归</h3><p><img src="https://zh.d2l.ai/_images/softmaxreg.svg"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/Screenshot_20230504_155500_com.jideos.jnotes.png" alt="Screenshot_20230504_155500_com.jideos.jnotes"></p>
+<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/400E564C26F275CC7763A4B07853619B.jpg" alt="img"></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/23/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%80%9D%E8%B7%AF%E7%AF%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headIcon.jpg">
+      <meta itemprop="name" content="Luke">
+      <meta itemprop="description" content="我爱学习！~~~">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luke-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/23/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%80%9D%E8%B7%AF%E7%AF%87/" class="post-title-link" itemprop="url">动手学深度学习-思路篇</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-04-23 09:21:00 / 修改时间：09:29:10" itemprop="dateCreated datePublished" datetime="2023-04-23T09:21:00+08:00">2023-04-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">动手学深度学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="必学章节"><a href="#必学章节" class="headerlink" title="必学章节"></a>必学章节</h2><ol>
+<li>预备知识</li>
+<li>线性神经网络</li>
+<li>多层感知机： 4.1-4.8</li>
+<li>深度学习计算</li>
+<li>图像必学<ol>
+<li>卷积神经网络</li>
+<li>现代卷积神经网络：7.1, 7.2, 7.5, 7.6, 7.7</li>
+<li>13 计算机视觉</li>
+</ol>
+</li>
+<li>时序必学（“时序必学”部分先不看，看图像和注意力机制）<ol>
+<li>循环神经网络</li>
+<li>现代循环神经网络9.1, 9.2, 9.3, 9.4, 9.6, 9.7, 9.8</li>
+</ol>
+</li>
+<li>注意力机制</li>
+</ol>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423092420803.png" alt="image-20230423092420803"></p>
+<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230423092652339.png" alt="image-20230423092652339"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/16/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E9%95%BF%E7%9F%AD%E6%97%B6%E8%AE%B0%E5%BF%86%E7%BD%91%E7%BB%9CLSTM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -179,7 +711,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-17 15:53:58" itemprop="dateModified" datetime="2023-04-17T15:53:58+08:00">2023-04-17</time>
+                <time title="修改时间：2023-04-22 15:18:02" itemprop="dateModified" datetime="2023-04-22T15:18:02+08:00">2023-04-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -208,8 +740,10 @@
 </ul>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230416083511755.png" alt="image-20230416083511755"></p>
 <h2 id="0x2-视频学习🖊"><a href="#0x2-视频学习🖊" class="headerlink" title="0x2 视频学习🖊"></a>0x2 视频学习🖊</h2><h3 id="LSTM解决了什么问题？"><a href="#LSTM解决了什么问题？" class="headerlink" title="LSTM解决了什么问题？"></a>LSTM解决了什么问题？</h3><ul>
-<li>解决了梯度消失，但是没有解决梯度爆炸。</li>
+<li>解决了梯度消失，但是没有解决梯度爆炸。<ul>
 <li>为什么能解决梯度消失的问题？</li>
+</ul>
+</li>
 </ul>
 <h3 id="LSTM的Solution"><a href="#LSTM的Solution" class="headerlink" title="LSTM的Solution"></a>LSTM的Solution</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230416140347307.png" alt="image-20230416140347307"></p>
 <p>在t 时刻，LSTM的输入有三个：</p>
@@ -227,7 +761,8 @@
 </ul>
 <h3 id="But-怎么样让状态长期保存？？？？？"><a href="#But-怎么样让状态长期保存？？？？？" class="headerlink" title="But, 怎么样让状态长期保存？？？？？"></a>But, 怎么样让状态长期保存？？？？？</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230416141316946.png" alt="image-20230416141316946"></p>
 <ul>
-<li>开关怎么实现？&#x3D;&gt; 门的概念<ul>
+<li><p>开关怎么实现？&#x3D;&gt; 门的概念</p>
+<ul>
 <li>啥是门？ &#x3D;&gt; 一层全连接层，输入是一个向量，输出是一个0到1之间的实数向量</li>
 <li>门可以表示成这样：<img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230416142120679.png" alt="image-20230416142120679"></li>
 <li>其中<em>σ</em>是sigmoid函数，所以门的状态都是半开半闭，这意味着<ul>
@@ -237,6 +772,8 @@
 </ul>
 </li>
 </ul>
+</li>
+<li><p>注意看，h<sub>t</sub>的输出其实会copy一份到y<sub>t</sub></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_9_1681631918050.png" alt="未命名文档(10)_9_1681631918050"></p>
@@ -248,6 +785,10 @@
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_16_1681717955710.png" alt="未命名文档(10)_16_1681717955710"></p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_17_1681717978845.png" alt="未命名文档(10)_17_1681717978845"></p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_18_1681718000135.png" alt="未命名文档(10)_18_1681718000135"></p>
+<h2 id="0x3-python小知识学习"><a href="#0x3-python小知识学习" class="headerlink" title="0x3 python小知识学习"></a>0x3 python小知识学习</h2><p>np.transpose()函数</p>
+<p>一句话简单说：改变np数组结构的函数，类比excel表当中x轴y轴互换操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.arange(<span class="number">4</span>).reshape((<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-------------------------&#x27;</span>)</span><br><span class="line">x = np.transpose(x)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;====================&#x27;</span>)</span><br><span class="line">y = np.arange(<span class="number">12</span>).reshape((<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-------------------------&#x27;</span>)</span><br><span class="line">y = np.transpose(y,(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过transpose()函数改变了x的索引值为（2，1，0），对应（y，x，z）</span></span><br><span class="line"><span class="comment"># 也就是 原本的 y[1][0][0]的元素</span></span><br><span class="line"><span class="comment"># 变成了 现在的 y[0][0][1]元素</span></span><br><span class="line"><span class="comment"># 二维的话就相当于转置</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -514,7 +1055,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-13 16:58:56" itemprop="dateModified" datetime="2023-04-13T16:58:56+08:00">2023-04-13</time>
+                <time title="修改时间：2023-04-20 15:45:07" itemprop="dateModified" datetime="2023-04-20T15:45:07+08:00">2023-04-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -718,7 +1259,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-15 08:45:34" itemprop="dateModified" datetime="2023-04-15T08:45:34+08:00">2023-04-15</time>
+                <time title="修改时间：2023-04-22 20:48:23" itemprop="dateModified" datetime="2023-04-22T20:48:23+08:00">2023-04-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -866,6 +1407,9 @@
 <p>面向对象是一步一步向前面的Layer迭代的，向量化是对整个网络直接操作的</p>
 <h2 id="0x-9手推公式"><a href="#0x-9手推公式" class="headerlink" title="0x 9手推公式"></a>0x 9手推公式</h2><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_2_1681288291648.png" alt="未命名文档(10)_2_1681288291648"></p>
 <p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E6%A1%A3(10)_3_1681288363607.png" alt="未命名文档(10)_3_1681288363607"></p>
+<pre><code>
+
+</code></pre>
 
       
     </div>
@@ -986,417 +1530,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/headIcon.jpg">
-      <meta itemprop="name" content="Luke">
-      <meta itemprop="description" content="我爱学习！~~~">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luke-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83/" class="post-title-link" itemprop="url">零基础入门深度学习- 线性单元</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-09 14:45:12" itemprop="dateCreated datePublished" datetime="2023-04-09T14:45:12+08:00">2023-04-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-11 07:39:45" itemprop="dateModified" datetime="2023-04-11T07:39:45+08:00">2023-04-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">零基础入门深度学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="0x1这是要干啥？？？"><a href="#0x1这是要干啥？？？" class="headerlink" title="0x1这是要干啥？？？"></a>0x1这是要干啥？？？</h2><p>通过介绍另外一种『感知器』，也就是『线性单元』，来说明关于机器学习一些基本的概念，比如模型、目标函数、优化算法等等。这些概念对于所有的机器学习算法来说都是通用的，掌握了这些概念，就<mark>掌握了机器学习的基本套路</mark></p>
-<h2 id="0x2-自己画画重点"><a href="#0x2-自己画画重点" class="headerlink" title="0x2 自己画画重点"></a>0x2 自己画画重点</h2><h3 id="线性单元"><a href="#线性单元" class="headerlink" title="线性单元"></a>线性单元</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409145447181.png" alt="image-20230409145447181"></p>
-<h3 id="啥是模型？"><a href="#啥是模型？" class="headerlink" title="啥是模型？"></a>啥是模型？</h3><p>当我们说<strong>模型</strong>时，我们实际上在谈论根据输入x 预测输出y 的<mark><strong>算法</strong></mark></p>
-<p><mark>e.g:</mark><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409145745109.png" alt="image-20230409145745109"></p>
-<p>如果将 b 写成 w1*x1 ，<mark>其中 w1 &#x3D; b 且 x1 &#x3D; 1</mark></p>
-<p>那么y &#x3D; w*x + w1* x1</p>
-<p>这个式子还可以写成向量的形式：</p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409150039172.png" alt="image-20230409150039172"></p>
-<p> <mark>长成这种样子模型就叫做线性模型</mark></p>
-<h3 id="监督学习-amp-无监督学习"><a href="#监督学习-amp-无监督学习" class="headerlink" title="监督学习&amp;无监督学习"></a>监督学习&amp;无监督学习</h3><p>简单讲：</p>
-<ul>
-<li>监督学习 -&gt; 有label<ul>
-<li>类比 一本有答案的习题册，刷完这套题之后去考试（效果嘎嘎好！）</li>
-</ul>
-</li>
-<li>无监督学习 -&gt; 没有 label <ul>
-<li>类比一本没有答案的习题册，刷完之后去考试（效果不太好）</li>
-</ul>
-</li>
-</ul>
-<h3 id="如何理解输入？"><a href="#如何理解输入？" class="headerlink" title="如何理解输入？"></a>如何理解输入？</h3><p>类比  我向习题册写的东西，函数的x</p>
-<p>如何理解<mark>label</mark>? </p>
-<p>类比  习题册的答案、图像识别的工程帽标签、函数的y</p>
-<h3 id="线性单元的目标函数（讲这个的时候，只考虑了监督学习）"><a href="#线性单元的目标函数（讲这个的时候，只考虑了监督学习）" class="headerlink" title="线性单元的目标函数（讲这个的时候，只考虑了监督学习）"></a>线性单元的目标函数（讲这个的时候，只考虑了监督学习）</h3><p><mark>理解方式：拟合</mark></p>
-<p>有了特征x,通过模型h(x)可以计算出来y的估计值。</p>
-<h3 id="误差的计算"><a href="#误差的计算" class="headerlink" title="误差的计算"></a>误差的计算</h3><p><mark>理解： 真值和预测值之间差距有多大啊？ 越大就说明这个模型越不好！</mark></p>
-<p>以下推导是非常自然的，一点点看即可~~</p>
-<ul>
-<li>单个样本的误差<ul>
-<li><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409151300387.png" alt="image-20230409151300387"></li>
-</ul>
-</li>
-<li>N个样本误差的合（注意，以下的几个式子都一样）<ul>
-<li><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409151559800.png" alt="image-20230409151559800"><ul>
-<li>上面的<mark>y拔<mark>就是模型的预测值：<img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409151616024.png" alt="image-20230409151616024"></li>
-</ul>
-</li>
-<li>最终版本：🐕🐕🐕<img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409151803612.png" alt="image-20230409151803612"></li>
-</ul>
-</li>
-</ul>
-<h2 id="0x3盘一下逻辑⭐⭐⭐⭐⭐"><a href="#0x3盘一下逻辑⭐⭐⭐⭐⭐" class="headerlink" title="0x3盘一下逻辑⭐⭐⭐⭐⭐"></a>0x3盘一下逻辑⭐⭐⭐⭐⭐</h2><p>开局先自己搞个函数</p>
-<p>e.g.: </p>
-<p>y &#x3D; ax1+bx2+cx3</p>
-<p>y &#x3D; W<sup>T</sup>X</p>
-<p>我说这个函数就能解决能<mark>预测房价</mark>，ok吗？</p>
-<p>答：ok的，我把6月的房价(x1)、销售量(x2)、地段(x3)输入到上面的函数当中，就能完成预测。</p>
-<p>but这<mark>估计是不准确</mark>的，但是能让他准点吗？</p>
-<p>答：能！ <mark>有监督学习 + 误差计算</mark>不断修改W<sup>T</sup>的值，就能让他变准点！</p>
-<h2 id="0x4-简单写一下代码，里面有些东西要记住"><a href="#0x4-简单写一下代码，里面有些东西要记住" class="headerlink" title="0x4 简单写一下代码，里面有些东西要记住~"></a>0x4 简单写一下代码，里面有些东西要记住~</h2><p>Python当中的继承</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LinearUnit</span>(<span class="title class_ inherited__">Perceptron</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, input_num</span>):</span><br><span class="line">        Perceptron.__init__(self, input_num, f)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/08/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%84%9F%E7%9F%A5%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/headIcon.jpg">
-      <meta itemprop="name" content="Luke">
-      <meta itemprop="description" content="我爱学习！~~~">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luke-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/08/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%84%9F%E7%9F%A5%E5%99%A8/" class="post-title-link" itemprop="url">零基础入门深度学习-感知器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-08 21:17:39" itemprop="dateCreated datePublished" datetime="2023-04-08T21:17:39+08:00">2023-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-11 07:39:34" itemprop="dateModified" datetime="2023-04-11T07:39:34+08:00">2023-04-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">零基础入门深度学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="0x1-理解"><a href="#0x1-理解" class="headerlink" title="0x1 理解"></a>0x1 理解</h2><p>链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011681952/article/details/93633608">https://blog.csdn.net/u011681952/article/details/93633608</a><br>我的理解： 核心是函数<br>但是要对这个函数进行<mark>调参</mark><br>从而能实现线性分类或者线性回归问题<br>e.g. and 函数、or 函数</p>
-<h2 id="0x2-从这节课当中学习到的知识"><a href="#0x2-从这节课当中学习到的知识" class="headerlink" title="0x2 从这节课当中学习到的知识"></a>0x2 从这节课当中学习到的知识</h2><blockquote>
-<p>  填充list</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">weight = [0.0 for _ in range(10)]</span><br><span class="line">print(weight)</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>  python当中的类（类比Java学习）</p>
-</blockquote>
-<p><mark>核心：构造方法、this关键字</mark></p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230408200856228.png" alt="image-20230408200856228"></p>
-<p><mark>类比：toString方法</mark></p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230408201327525.png" alt="image-20230408201327525"></p>
-<p>这里有个知识点：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\t 是指制表符，代表着四个空格，也就是一个tab</span><br><span class="line">%s %f 是字符串的格式方式</span><br><span class="line">self.weights会被填充到 %s的位置上</span><br><span class="line">self.bias 会被填充到 %f的位置上</span><br></pre></td></tr></table></figure>
-
-
-
-<p><mark>普通方法：</mark></p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230408203210295.png" alt="image-20230408203210295"></p>
-<p>这里有个知识点：</p>
-<ul>
-<li><p>activator是在构造函数中有定义，由于python没有数值的类型要求，所以不需要在函数内部再去单独定义这个类的变量</p>
-</li>
-<li><p>lambda表达式的使用</p>
-<ul>
-<li>lambda 参数：返回值	 <mark>e.g. lambda a,b:a+b</mark></li>
-<li>写上它，就相当于说给了一个函数<ul>
-<li>这个函数可以用在reduce函数当中，进行迭代（目前知道的用途）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>map的使用</p>
-<ul>
-<li><p>map(function, iterable, …)</p>
-</li>
-<li><p>它返回的是一个Map对象，如果想要输出里面的内容，可以转成List集合进行输出</p>
-</li>
-<li><p>function —-&gt; 函数<br>iterable —-&gt; 一个或多个序列</p>
-</li>
-<li><p><mark>经典例子</mark></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># &lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;=一般写法：&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;=</span></span><br><span class="line"><span class="comment"># 1、计算平方数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">x</span>):</span><br><span class="line">	<span class="keyword">return</span> x ** <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">map</span>(square, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])	<span class="comment"># 计算列表各个元素的平方</span></span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># &lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;=匿名函数写法：&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;</span></span><br><span class="line"><span class="comment"># 2、计算平方数，lambda 写法</span></span><br><span class="line"><span class="built_in">map</span>(<span class="keyword">lambda</span> x: x ** <span class="number">2</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]	 </span><br><span class="line"></span><br><span class="line"><span class="comment"># 3、提供两个列表，将其相同索引位置的列表元素进行相加</span></span><br><span class="line"><span class="built_in">map</span>(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>], [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>])</span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line">[<span class="number">3</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>, <span class="number">19</span>]</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>zip函数的使用</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">z = [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"> </span><br><span class="line">xyz = <span class="built_in">zip</span>(x, y, z)</span><br><span class="line"><span class="comment">#print xyz运行的结果是：</span></span><br><span class="line">[(<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>), (<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>), (<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>)]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>reduce函数的使用</p>
-<ul>
-<li><p>描述：<strong>reduce()</strong> 函数会对参数序列中元素进行累积。</p>
-<p>函数将一个数据集合（链表，元组等）中的所有数据进行下列操作：用传给 reduce 中的函数 function（有两个参数）先对集合中的第 1、2 个元素进行操作，得到的结果再与第三个数据用 function 函数运算，最后得到一个结果。</p>
-</li>
-<li><p>&#96;&#96;&#96;python</p>
-<h1 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h1><p>reduce(function, iterable[, initializer])</p>
-<h1 id="function-–-函数，有两个参数"><a href="#function-–-函数，有两个参数" class="headerlink" title="function – 函数，有两个参数"></a>function – 函数，有两个参数</h1><h1 id="iterable-–-可迭代对象"><a href="#iterable-–-可迭代对象" class="headerlink" title="iterable – 可迭代对象"></a>iterable – 可迭代对象</h1><h1 id="initializer-–-可选，初始参数"><a href="#initializer-–-可选，初始参数" class="headerlink" title="initializer – 可选，初始参数"></a>initializer – 可选，初始参数</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+   例子：</span><br><span class="line"></span><br><span class="line">    ```python</span><br><span class="line">    #!/usr/bin/python</span><br><span class="line">    from functools import reduce</span><br><span class="line">    </span><br><span class="line">    def add(x, y) :            # 两数相加</span><br><span class="line">        return x + y</span><br><span class="line">    sum1 = reduce(add, [1,2,3,4,5])   # 计算列表和：1+2+3+4+5</span><br><span class="line">    sum2 = reduce(lambda x, y: x+y, [1,2,3,4,5])  # 使用 lambda 匿名函数</span><br><span class="line">    print(sum1)  #15</span><br><span class="line">    print(sum2)  #15</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h2 id="0x3-小Tips"><a href="#0x3-小Tips" class="headerlink" title="0x3 小Tips"></a>0x3 小Tips</h2><p>神经元也叫做<strong>感知器</strong></p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409102928489.png" alt="image-20230409102928489"></p>
-<p>每个小圈圈都是一个神经元（感知器）</p>
-<p>但是每个感知器内部又是这样子：</p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409103031661.png" alt="image-20230409103031661"></p>
-<p>so，代码部分在干什么呢？</p>
-<blockquote>
-<p>  大步骤：</p>
-<ol>
-<li>训练感知器</li>
-<li>训练好后，我把数据扔给感知器，让他输出结果</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>  小步骤-怎么训练感知器？</p>
-<ol>
-<li><p>创建一个感知器 train_and_perceptron()</p>
-</li>
-<li><p><mark>十轮迭代训练，速率为0.1<mark>  p.train(input_vecs, labels, 10, 0.1)</p>
-<p>每一轮干了这些事情：</p>
-<ul>
-<li>计算感知器在当前权重下的输出</li>
-<li><mark>更新权重<mark></li>
-</ul>
-</li>
-</ol>
-</blockquote>
-<p>解惑：</p>
-<p>在感知器算法中，_update_weights函数是用来更新权重和偏置项的。在每次训练中，该函数会计算当前预测输出与实际标签之间的差异（即误差），并根据误差和学习速率来更新权重和偏置项。</p>
-<p>具体来说，对于每个输入向量和对应的标签，算法计算当前输入向量对应的输出值，然后根据预测输出和实际标签之间的差异来计算更新量。对于每个输入向量的每个权重和偏置项，更新量都是根据以下公式计算的：</p>
-<p><mark>w’ &#x3D; w + Δw &#x3D; w + η * δ * x b’ &#x3D; b + Δb &#x3D; b + η * δ</mark></p>
-<p>其中，w是权重，b是偏置项，w’和b’是更新后的权重和偏置项，η是学习速率，δ是误差，x是当前输入向量的值。<mark>这个公式可以理解为：权重和偏置项的更新量与学习速率和误差成正比，与输入向量的值成正比。</mark></p>
-<p>最终，_update_weights函数返回更新后的权重和偏置项。这些更新后的权重和偏置项将用于下一次迭代中，以继续训练模型。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/02/26/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/headIcon.jpg">
-      <meta itemprop="name" content="Luke">
-      <meta itemprop="description" content="我爱学习！~~~">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luke-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/02/26/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="post-title-link" itemprop="url">test</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-02-26 11:16:48" itemprop="dateCreated datePublished" datetime="2023-02-26T11:16:48+08:00">2023-02-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-17 08:24:21" itemprop="dateModified" datetime="2023-04-17T08:24:21+08:00">2023-04-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">工具使用</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="如何使用hexo发布一篇文章？"><a href="#如何使用hexo发布一篇文章？" class="headerlink" title="如何使用hexo发布一篇文章？"></a>如何使用hexo发布一篇文章？</h1><h2 id="0x-0-前置知识"><a href="#0x-0-前置知识" class="headerlink" title="0x 0 前置知识"></a>0x 0 前置知识</h2><p>预防针：搭建整个博客极其简单，不需要任何技术，只要按照教程一步一步来即可。</p>
-<ol>
-<li><p>已经按照博客<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903830568583176">Hexo+Github+Netlify部署个人博客 - 掘金 (juejin.cn)</a>搭建起了整个框架</p>
-<p>注意：博客搭建到这一步就ok了，后边的不用管</p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230417081954161.png" alt="image-20230417081954161"></p>
-</li>
-<li><p>需要掌握markdown的基本语法</p>
-</li>
-<li><p>typora或者vscode去编写博客。</p>
-</li>
-</ol>
-<h2 id="0x-1-如何发布文章"><a href="#0x-1-如何发布文章" class="headerlink" title="0x 1 如何发布文章"></a>0x 1 如何发布文章</h2><ol>
-<li>到站点的根目录下面（见下图）</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230417080442700.png" alt="image-20230417080442700"></p>
-<ol start="2">
-<li>创建一个文章：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;文章名&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>例如 我写上： hexo new “断剑重铸之日，骑士归来之时”</li>
-</ul>
-<p>创建好之后的文件在站点文件夹的source&#x2F;_post目录下面，然后就可以编写了</p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230417080701304.png" alt="image-20230417080701304"></p>
-<ol start="3">
-<li>编写完成之后，需要将文章进行推送</li>
-</ol>
-<p>方法：</p>
-<ul>
-<li>打开cmd, cd到站点根目录下面，使用hexo三连~</li>
-<li><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230417081323208.png" alt="image-20230417081323208"></li>
-</ul>
-<p>就是底下的这三条</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g     </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>然后再去你的站点看看，部署就完成了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1463,12 +1601,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
       </div>
   </nav>
