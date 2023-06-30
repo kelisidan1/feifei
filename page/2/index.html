@@ -148,137 +148,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/headIcon.jpg">
-      <meta itemprop="name" content="Luke">
-      <meta itemprop="description" content="我爱学习！~~~">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luke-blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/09/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83/" class="post-title-link" itemprop="url">零基础入门深度学习- 线性单元</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-09 14:45:12" itemprop="dateCreated datePublished" datetime="2023-04-09T14:45:12+08:00">2023-04-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-11 07:39:45" itemprop="dateModified" datetime="2023-04-11T07:39:45+08:00">2023-04-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">零基础入门深度学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="0x1这是要干啥？？？"><a href="#0x1这是要干啥？？？" class="headerlink" title="0x1这是要干啥？？？"></a>0x1这是要干啥？？？</h2><p>通过介绍另外一种『感知器』，也就是『线性单元』，来说明关于机器学习一些基本的概念，比如模型、目标函数、优化算法等等。这些概念对于所有的机器学习算法来说都是通用的，掌握了这些概念，就<mark>掌握了机器学习的基本套路</mark></p>
-<h2 id="0x2-自己画画重点"><a href="#0x2-自己画画重点" class="headerlink" title="0x2 自己画画重点"></a>0x2 自己画画重点</h2><h3 id="线性单元"><a href="#线性单元" class="headerlink" title="线性单元"></a>线性单元</h3><p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409145447181.png" alt="image-20230409145447181"></p>
-<h3 id="啥是模型？"><a href="#啥是模型？" class="headerlink" title="啥是模型？"></a>啥是模型？</h3><p>当我们说<strong>模型</strong>时，我们实际上在谈论根据输入x 预测输出y 的<mark><strong>算法</strong></mark></p>
-<p><mark>e.g:</mark><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409145745109.png" alt="image-20230409145745109"></p>
-<p>如果将 b 写成 w1*x1 ，<mark>其中 w1 &#x3D; b 且 x1 &#x3D; 1</mark></p>
-<p>那么y &#x3D; w*x + w1* x1</p>
-<p>这个式子还可以写成向量的形式：</p>
-<p><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409150039172.png" alt="image-20230409150039172"></p>
-<p> <mark>长成这种样子模型就叫做线性模型</mark></p>
-<h3 id="监督学习-amp-无监督学习"><a href="#监督学习-amp-无监督学习" class="headerlink" title="监督学习&amp;无监督学习"></a>监督学习&amp;无监督学习</h3><p>简单讲：</p>
-<ul>
-<li>监督学习 -&gt; 有label<ul>
-<li>类比 一本有答案的习题册，刷完这套题之后去考试（效果嘎嘎好！）</li>
-</ul>
-</li>
-<li>无监督学习 -&gt; 没有 label <ul>
-<li>类比一本没有答案的习题册，刷完之后去考试（效果不太好）</li>
-</ul>
-</li>
-</ul>
-<h3 id="如何理解输入？"><a href="#如何理解输入？" class="headerlink" title="如何理解输入？"></a>如何理解输入？</h3><p>类比  我向习题册写的东西，函数的x</p>
-<p>如何理解<mark>label</mark>? </p>
-<p>类比  习题册的答案、图像识别的工程帽标签、函数的y</p>
-<h3 id="线性单元的目标函数（讲这个的时候，只考虑了监督学习）"><a href="#线性单元的目标函数（讲这个的时候，只考虑了监督学习）" class="headerlink" title="线性单元的目标函数（讲这个的时候，只考虑了监督学习）"></a>线性单元的目标函数（讲这个的时候，只考虑了监督学习）</h3><p><mark>理解方式：拟合</mark></p>
-<p>有了特征x,通过模型h(x)可以计算出来y的估计值。</p>
-<h3 id="误差的计算"><a href="#误差的计算" class="headerlink" title="误差的计算"></a>误差的计算</h3><p><mark>理解： 真值和预测值之间差距有多大啊？ 越大就说明这个模型越不好！</mark></p>
-<p>以下推导是非常自然的，一点点看即可~~</p>
-<ul>
-<li>单个样本的误差<ul>
-<li><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409151300387.png" alt="image-20230409151300387"></li>
-</ul>
-</li>
-<li>N个样本误差的合（注意，以下的几个式子都一样）<ul>
-<li><img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409151559800.png" alt="image-20230409151559800"><ul>
-<li>上面的<mark>y拔<mark>就是模型的预测值：<img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409151616024.png" alt="image-20230409151616024"></li>
-</ul>
-</li>
-<li>最终版本：🐕🐕🐕<img src="https://raw.githubusercontent.com/kelisidan1/blogImg/main/img/image-20230409151803612.png" alt="image-20230409151803612"></li>
-</ul>
-</li>
-</ul>
-<h2 id="0x3盘一下逻辑⭐⭐⭐⭐⭐"><a href="#0x3盘一下逻辑⭐⭐⭐⭐⭐" class="headerlink" title="0x3盘一下逻辑⭐⭐⭐⭐⭐"></a>0x3盘一下逻辑⭐⭐⭐⭐⭐</h2><p>开局先自己搞个函数</p>
-<p>e.g.: </p>
-<p>y &#x3D; ax1+bx2+cx3</p>
-<p>y &#x3D; W<sup>T</sup>X</p>
-<p>我说这个函数就能解决能<mark>预测房价</mark>，ok吗？</p>
-<p>答：ok的，我把6月的房价(x1)、销售量(x2)、地段(x3)输入到上面的函数当中，就能完成预测。</p>
-<p>but这<mark>估计是不准确</mark>的，但是能让他准点吗？</p>
-<p>答：能！ <mark>有监督学习 + 误差计算</mark>不断修改W<sup>T</sup>的值，就能让他变准点！</p>
-<h2 id="0x4-简单写一下代码，里面有些东西要记住"><a href="#0x4-简单写一下代码，里面有些东西要记住" class="headerlink" title="0x4 简单写一下代码，里面有些东西要记住~"></a>0x4 简单写一下代码，里面有些东西要记住~</h2><p>Python当中的继承</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LinearUnit</span>(<span class="title class_ inherited__">Perceptron</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, input_num</span>):</span><br><span class="line">        Perceptron.__init__(self, input_num, f)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://luke-blog.netlify.app/2023/04/08/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%84%9F%E7%9F%A5%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -624,7 +493,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
